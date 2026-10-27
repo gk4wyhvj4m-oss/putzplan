@@ -1,0 +1,914 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Putzplan">
+<meta name="theme-color" content="#f5f4f0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#121413" media="(prefers-color-scheme: dark)">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<link rel="icon" href="data:image/png;base64,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">
+<title>Putzplan</title>
+<!-- Symbole: Lucide (ISC-Lizenz), https://lucide.dev -->
+<style>
+:root {
+  --bg: #f5f4f0;
+  --card: #ffffff;
+  --ink: #1d211f;
+  --ink-soft: #4b524e;
+  --muted: #8c928d;
+  --line: rgba(29, 33, 31, .08);
+  --accent: #5d7d6c;
+  --accent-soft: rgba(93, 125, 108, .11);
+  --warn: #b0654a;
+  --warn-soft: rgba(176, 101, 74, .1);
+  --shadow: 0 1px 2px rgba(0,0,0,.04), 0 4px 16px rgba(0,0,0,.035);
+  --bar: rgba(245, 244, 240, .86);
+  --font: ui-rounded, "SF Pro Rounded", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #121413;
+    --card: #1b1e1c;
+    --ink: #e8ebe7;
+    --ink-soft: #c2c8c3;
+    --muted: #7f8781;
+    --line: rgba(232, 235, 231, .08);
+    --accent: #8db29d;
+    --accent-soft: rgba(141, 178, 157, .13);
+    --warn: #d58c70;
+    --warn-soft: rgba(213, 140, 112, .12);
+    --shadow: none;
+    --bar: rgba(18, 20, 19, .84);
+  }
+}
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+html { background: var(--bg); -webkit-text-size-adjust: 100%; overflow-x: hidden; }
+@supports (overflow: clip) { html, body { overflow-x: clip; } }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font); min-height: 100vh; }
+button { font: inherit; color: inherit; }
+.i { width: 22px; height: 22px; flex: none; display: block; }
+
+main {
+  max-width: 620px; margin: 0 auto;
+  padding: calc(env(safe-area-inset-top) + 18px) 18px calc(env(safe-area-inset-bottom) + 120px);
+}
+
+/* Kopf */
+.hd-top { display: flex; align-items: center; justify-content: space-between; min-height: 40px; }
+.date { font-size: 14px; color: var(--muted); font-weight: 500; }
+.ib {
+  appearance: none; border: 0; background: none; width: 40px; height: 40px; border-radius: 20px;
+  display: grid; place-items: center; color: var(--ink-soft); cursor: pointer; margin-right: -8px;
+}
+.ib:active { background: var(--line); }
+.back { margin-left: -10px; margin-right: 0; color: var(--accent); }
+h1 { font-size: 34px; line-height: 1.1; margin: 4px 0 4px; font-weight: 700; letter-spacing: -.01em; }
+.summary { color: var(--muted); font-size: 15px; margin: 0 0 18px; }
+.room-title { display: flex; align-items: center; gap: 12px; }
+
+.seg {
+  display: flex; background: var(--line); border-radius: 11px; padding: 2px; margin: 0 0 22px;
+}
+.seg button {
+  appearance: none; border: 0; background: none; flex: 1; height: 32px; border-radius: 9px;
+  font-size: 14px; font-weight: 600; color: var(--ink-soft); cursor: pointer;
+  transition: background .2s, color .2s;
+}
+.seg button.on { background: var(--card); color: var(--ink); box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+
+/* Abschnitte und Zeilen */
+.sec { margin: 0 0 22px; }
+.sec-h {
+  font-size: 13px; font-weight: 600; letter-spacing: .02em; color: var(--muted);
+  margin: 0 4px 8px; display: flex; justify-content: space-between;
+}
+.sec-h.warn { color: var(--warn); }
+.list { background: var(--card); border-radius: 18px; box-shadow: var(--shadow); overflow: hidden; }
+.row {
+  display: flex; align-items: center; gap: 13px; padding: 12px 12px 12px 14px;
+  position: relative; cursor: pointer;
+  transition: opacity .35s ease, transform .35s ease;
+}
+.row + .row::before {
+  content: ""; position: absolute; top: 0; left: 64px; right: 0; height: 1px; background: var(--line);
+}
+.row:active { background: var(--line); }
+.row.gone { opacity: 0; transform: translateX(24px); }
+.tile {
+  width: 38px; height: 38px; border-radius: 11px; flex: none;
+  background: var(--accent-soft); color: var(--accent);
+  display: grid; place-items: center;
+}
+.tile .i { width: 20px; height: 20px; }
+.tile.lg { width: 52px; height: 52px; border-radius: 15px; }
+.tile.lg .i { width: 26px; height: 26px; }
+.tile.warn { background: var(--warn-soft); color: var(--warn); }
+.txt { flex: 1; min-width: 0; }
+.nm { font-size: 16px; font-weight: 600; line-height: 1.25; }
+.meta { display: flex; gap: 10px; font-size: 13px; color: var(--muted); margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.meta .due.warn { color: var(--warn); font-weight: 600; }
+.meta .due.today { color: var(--accent); font-weight: 600; }
+.fresh { height: 3px; border-radius: 2px; background: var(--line); margin-top: 7px; overflow: hidden; }
+.fresh i { display: block; height: 100%; background: var(--accent); opacity: .55; border-radius: 2px; }
+.chk {
+  appearance: none; border: 1.6px solid var(--line); background: none; flex: none;
+  width: 34px; height: 34px; border-radius: 17px; display: grid; place-items: center;
+  color: transparent; cursor: pointer; transition: all .25s ease;
+  border-color: color-mix(in srgb, var(--muted) 45%, transparent);
+}
+.chk .i { width: 18px; height: 18px; }
+.chk.done { background: var(--accent); border-color: var(--accent); color: var(--card); transform: scale(1.05); }
+.more {
+  appearance: none; border: 0; background: none; width: 100%; padding: 14px; font-size: 15px;
+  color: var(--accent); font-weight: 600; cursor: pointer;
+}
+.add-row { color: var(--accent); }
+.add-row .tile { background: none; border: 1.5px dashed color-mix(in srgb, var(--accent) 45%, transparent); }
+
+.empty { text-align: center; padding: 34px 20px 30px; color: var(--muted); }
+.empty .tile { margin: 0 auto 14px; width: 56px; height: 56px; border-radius: 18px; }
+.empty .tile .i { width: 28px; height: 28px; }
+.empty b { display: block; color: var(--ink); font-size: 18px; margin-bottom: 4px; }
+
+/* Zimmer-Karten */
+.rooms { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.rc {
+  appearance: none; border: 0; text-align: left; cursor: pointer;
+  background: var(--card); border-radius: 18px; box-shadow: var(--shadow); padding: 14px;
+  display: flex; flex-direction: column; gap: 12px; min-height: 128px;
+}
+.rc:active { transform: scale(.98); }
+.rc .nm { font-size: 16px; }
+.rc .sub { font-size: 13px; color: var(--muted); margin-top: 2px; }
+.rc .sub.warn { color: var(--warn); font-weight: 600; }
+.rc .fresh { margin-top: auto; }
+
+/* Plus-Knopf */
+.fab {
+  position: fixed; right: max(18px, calc(50% - 292px)); bottom: calc(env(safe-area-inset-bottom) + 22px); z-index: 5;
+  width: 56px; height: 56px; border-radius: 28px; border: 0;
+  background: var(--accent); color: var(--card); display: grid; place-items: center; cursor: pointer;
+  box-shadow: 0 6px 20px rgba(0,0,0,.16);
+}
+.fab .i { width: 26px; height: 26px; }
+.fab:active { transform: scale(.95); }
+
+/* Blätter */
+.veil { position: fixed; inset: 0; z-index: 9; background: rgba(10,12,11,.28); opacity: 0; pointer-events: none; transition: opacity .28s ease; }
+.sheet {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 10; max-width: 620px; margin: 0 auto;
+  background: var(--bg); border-radius: 24px 24px 0 0;
+  padding: 10px 18px calc(env(safe-area-inset-bottom) + 22px);
+  max-height: 92vh; overflow-y: auto; -webkit-overflow-scrolling: touch; overscroll-behavior: contain;
+  transform: translateY(104%); transition: transform .34s cubic-bezier(.2,.8,.2,1);
+}
+.sheet-open .veil { opacity: 1; pointer-events: auto; }
+.sheet-open .sheet { transform: none; }
+.grab { width: 36px; height: 4px; border-radius: 2px; background: var(--line); margin: 0 auto 16px; }
+.sh-head { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; }
+.sh-head h2 { margin: 0; font-size: 22px; line-height: 1.2; }
+.sh-head .sub { color: var(--muted); font-size: 14px; margin-top: 2px; }
+h2.t { font-size: 22px; margin: 0 0 18px; }
+.facts { background: var(--card); border-radius: 16px; box-shadow: var(--shadow); margin-bottom: 16px; }
+.facts div { display: flex; justify-content: space-between; gap: 14px; padding: 12px 14px; font-size: 15px; }
+.facts div + div { border-top: 1px solid var(--line); }
+.facts span { color: var(--muted); }
+.facts b { font-weight: 600; text-align: right; }
+.btn {
+  appearance: none; border: 0; cursor: pointer; position: relative;
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  width: 100%; height: 50px; border-radius: 14px; font-size: 16px; font-weight: 600;
+  background: var(--card); color: var(--ink); box-shadow: var(--shadow);
+}
+.btn:active { opacity: .8; }
+.btn.pri { background: var(--accent); color: var(--card); box-shadow: none; }
+.btn.danger { background: none; box-shadow: none; color: var(--warn); }
+.btn .i { width: 19px; height: 19px; }
+.btn input[type=date] { position: absolute; inset: 0; opacity: 0; width: 100%; height: 100%; }
+.btn-row { display: flex; gap: 10px; margin-top: 10px; }
+.lbl { font-size: 13px; font-weight: 600; color: var(--muted); margin: 20px 4px 8px; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip {
+  appearance: none; border: 0; cursor: pointer; height: 38px; padding: 0 14px; border-radius: 19px;
+  background: var(--card); box-shadow: var(--shadow); font-size: 15px; font-weight: 500;
+  display: inline-flex; align-items: center; gap: 7px; color: var(--ink-soft);
+}
+.chip .i { width: 17px; height: 17px; }
+.chip.on { background: var(--accent); color: var(--card); box-shadow: none; }
+.hist { background: var(--card); border-radius: 16px; box-shadow: var(--shadow); }
+.hist div { padding: 11px 14px; font-size: 15px; color: var(--ink-soft); display: flex; justify-content: space-between; }
+.hist div + div { border-top: 1px solid var(--line); }
+.hist span { color: var(--muted); }
+
+.fld { display: block; background: var(--card); border-radius: 14px; box-shadow: var(--shadow); padding: 9px 14px 10px; margin-bottom: 4px; }
+.fld span { display: block; font-size: 12px; font-weight: 600; color: var(--muted); }
+.fld input {
+  appearance: none; border: 0; background: none; width: 100%; font: inherit; font-size: 17px;
+  color: var(--ink); padding: 3px 0 0; outline: none; min-height: 26px;
+}
+.icons { display: grid; grid-template-columns: repeat(auto-fill, minmax(46px, 1fr)); gap: 8px; }
+.icons button {
+  appearance: none; border: 0; cursor: pointer; aspect-ratio: 1; border-radius: 13px;
+  background: var(--card); box-shadow: var(--shadow); color: var(--ink-soft); display: grid; place-items: center;
+}
+.icons button.on { background: var(--accent); color: var(--card); box-shadow: none; }
+.name-row { display: flex; gap: 10px; align-items: stretch; }
+.name-row .tile.lg { width: 60px; height: auto; min-height: 60px; border-radius: 14px; }
+.name-row .fld { flex: 1; margin: 0; }
+.fld.search { display: flex; align-items: center; gap: 8px; padding: 0 12px; height: 42px; margin-bottom: 6px; }
+.fld.search .i { width: 18px; height: 18px; color: var(--muted); }
+.fld.search input { padding: 0; font-size: 16px; }
+.icat { font-size: 12px; font-weight: 600; color: var(--muted); margin: 16px 4px 8px; letter-spacing: .02em; }
+.interval { display: flex; gap: 10px; align-items: center; }
+.stepper { display: flex; align-items: center; background: var(--card); border-radius: 14px; box-shadow: var(--shadow); height: 46px; }
+.stepper button { appearance: none; border: 0; background: none; width: 44px; height: 46px; font-size: 22px; color: var(--accent); cursor: pointer; }
+.stepper b { min-width: 30px; text-align: center; font-size: 18px; font-variant-numeric: tabular-nums; }
+.interval .seg { flex: 1; margin: 0; height: 46px; align-items: stretch; border-radius: 14px; }
+.interval .seg button { height: auto; border-radius: 12px; }
+.mode-seg { margin: 0; }
+.hint { font-size: 13.5px; color: var(--muted); margin: 8px 4px 0; line-height: 1.4; }
+.set-list { background: var(--card); border-radius: 16px; box-shadow: var(--shadow); overflow: hidden; }
+.set-list button {
+  appearance: none; border: 0; background: none; width: 100%; display: flex; align-items: center; gap: 12px;
+  padding: 10px 14px; font-size: 16px; cursor: pointer; text-align: left; color: var(--ink);
+}
+.set-list button + button { border-top: 1px solid var(--line); }
+.set-list .tile { width: 32px; height: 32px; border-radius: 9px; }
+.set-list .tile .i { width: 17px; height: 17px; }
+.set-list .grow { flex: 1; }
+.set-list .cnt { color: var(--muted); font-size: 14px; }
+.set-list .chev { color: var(--muted); width: 18px; height: 18px; }
+.set-list .acc { color: var(--accent); font-weight: 600; }
+.foot { text-align: center; color: var(--muted); font-size: 12px; margin-top: 22px; }
+
+/* Hinweis unten */
+.toast {
+  position: fixed; left: 18px; right: 18px; bottom: calc(env(safe-area-inset-bottom) + 92px); z-index: 8;
+  max-width: 520px; margin: 0 auto;
+  background: var(--ink); color: var(--bg); border-radius: 14px; padding: 12px 8px 12px 16px;
+  display: flex; align-items: center; gap: 10px; font-size: 14.5px;
+  transform: translateY(20px); opacity: 0; pointer-events: none; transition: all .3s ease;
+}
+.toast.show { transform: none; opacity: 1; pointer-events: auto; }
+.toast span { flex: 1; }
+.toast button { appearance: none; border: 0; background: none; color: var(--accent); font-weight: 700; padding: 6px 10px; cursor: pointer; filter: brightness(1.25); }
+@media (prefers-color-scheme: dark) { .toast button { filter: none; color: #456a56; } }
+</style>
+</head>
+<body>
+<main id="app"></main>
+<button class="fab" id="fab" aria-label="Neue Aufgabe"></button>
+<div class="toast" id="toast"><span id="toastText"></span><button id="toastUndo">Rückgängig</button></div>
+<div class="veil" id="veil"></div>
+<div class="sheet" id="sheet" role="dialog"></div>
+<input type="file" id="importFile" accept="application/json,.json" hidden>
+
+<script>
+const ICONS = {"abzieher": "<path d=\"M3 7h18\"/><path d=\"M4 7v3h16V7\"/><path d=\"M12 10v11\"/>", "air-vent": "<path d=\"M18 17.5a2.5 2.5 0 1 1-4 2.03V12\" /> <path d=\"M6 12H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2\" /> <path d=\"M6 8h12\" /> <path d=\"M6.6 15.572A2 2 0 1 0 10 17v-5\" />", "aquarium": "<rect x=\"3\" y=\"5\" width=\"18\" height=\"15\" rx=\"2\"/><path d=\"M3 9h18\"/><path d=\"M7 14.5c1.5-2 4.5-2 6 0-1.5 2-4.5 2-6 0z\"/><path d=\"M13 14.5l2.5-1.8v3.6z\"/><path d=\"M17.5 12v.01\"/>", "archive": "<rect width=\"20\" height=\"5\" x=\"2\" y=\"3\" rx=\"1\" /> <path d=\"M4 8v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8\" /> <path d=\"M10 12h4\" />", "armchair": "<path d=\"M19 9V6a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v3\" /> <path d=\"M3 16a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-5a2 2 0 0 0-4 0v1.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V11a2 2 0 0 0-4 0z\" /> <path d=\"M5 18v2\" /> <path d=\"M19 18v2\" />", "baby": "<path d=\"M10 16c.5.3 1.2.5 2 .5s1.5-.2 2-.5\" /> <path d=\"M15 12h.01\" /> <path d=\"M19.38 6.813A9 9 0 0 1 20.8 10.2a2 2 0 0 1 0 3.6 9 9 0 0 1-17.6 0 2 2 0 0 1 0-3.6A9 9 0 0 1 12 3c2 0 3.5 1.1 3.5 2.5s-.9 2.5-2 2.5c-.8 0-1.5-.4-1.5-1\" /> <path d=\"M9 12h.01\" />", "backofen": "<rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"2\"/><path d=\"M3 8h18\"/><rect x=\"7\" y=\"11\" width=\"10\" height=\"7\" rx=\"1\"/><circle cx=\"7\" cy=\"5.5\" r=\".6\"/><circle cx=\"10.5\" cy=\"5.5\" r=\".6\"/><path d=\"M15 5.5h2\"/>", "bath": "<path d=\"M10 4 8 6\" /> <path d=\"M17 19v2\" /> <path d=\"M2 12h20\" /> <path d=\"M7 19v2\" /> <path d=\"M9 5 7.621 3.621A2.121 2.121 0 0 0 4 5v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5\" />", "battery-charging": "<path d=\"m11 7-3 5h4l-3 5\" /> <path d=\"M14.856 6H16a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.935\" /> <path d=\"M22 14v-4\" /> <path d=\"M5.14 18H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h2.936\" />", "bed-double": "<path d=\"M2 20v-8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8\" /> <path d=\"M4 10V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4\" /> <path d=\"M12 4v6\" /> <path d=\"M2 18h20\" />", "bed-single": "<path d=\"M3 20v-8a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v8\" /> <path d=\"M5 10V6a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v4\" /> <path d=\"M3 18h18\" />", "bett_beziehen": "<path d=\"M3 18V8\"/><path d=\"M3 13h18v5\"/><path d=\"M3 16h18\"/><path d=\"M6 13v-2a2 2 0 0 1 2-2h3a1 1 0 0 1 1 1v3\"/>", "bike": "<circle cx=\"18.5\" cy=\"17.5\" r=\"3.5\" /> <circle cx=\"5.5\" cy=\"17.5\" r=\"3.5\" /> <circle cx=\"15\" cy=\"5\" r=\"1\" /> <path d=\"M12 17.5V14l-3-3 4-3 2 3h2\" />", "bird": "<path d=\"M16 7h.01\" /> <path d=\"M3.4 18H12a8 8 0 0 0 8-8V7a4 4 0 0 0-7.28-2.3L2 20\" /> <path d=\"m20 7 2 .5-2 .5\" /> <path d=\"M10 18v3\" /> <path d=\"M14 17.75V21\" /> <path d=\"M7 18a6 6 0 0 0 3.84-10.61\" />", "blender": "<path d=\"M8 14a2 2 0 0 0-1.963 1.615l-1.018 5.193A1 1 0 0 0 6 22h12a1 1 0 0 0 .981-1.192l-1.018-5.193A2 2 0 0 0 16 14z\" /> <path d=\"m17 2-1 12\" /> <path d=\"M8.006 14 7 2\" /> <path d=\"M7.565 8.787A5 5 0 0 0 12 8a5 5 0 0 1 4.56-.75\" /> <path d=\"M19 2H5a2 2 0 0 0-2 2v5a2 2 0 0 0 .688 1.5\" /> <path d=\"M12 18h.01\" />", "blinds": "<path d=\"M3 3h18\" /> <path d=\"M20 7H8\" /> <path d=\"M20 11H8\" /> <path d=\"M10 19h10\" /> <path d=\"M8 15h12\" /> <path d=\"M4 3v14\" /> <circle cx=\"4\" cy=\"19\" r=\"2\" />", "bone": "<path d=\"M17 10c.7-.7 1.69 0 2.5 0a2.5 2.5 0 1 0 0-5 .5.5 0 0 1-.5-.5 2.5 2.5 0 1 0-5 0c0 .81.7 1.8 0 2.5l-7 7c-.7.7-1.69 0-2.5 0a2.5 2.5 0 0 0 0 5c.28 0 .5.22.5.5a2.5 2.5 0 1 0 5 0c0-.81-.7-1.8 0-2.5Z\" />", "book": "<path d=\"M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20\" />", "broom": "<path d=\"M13.5 10.5 22 2\" /> <path d=\"M14.734 13.841a2 2 0 00-.314-2.42L12.58 9.58a2 2 0 00-2.421-.314l-7.657 4.461A1 1 0 002.3 15.3l6.403 6.403a1 1 0 001.571-.204z\" /> <path d=\"m5 18 2-2\" /> <path d=\"m7.699 10.7 5.602 5.601\" />", "brush-cleaning": "<path d=\"m16 22-1-4\" /> <path d=\"M19 14a1 1 0 0 0 1-1v-1a2 2 0 0 0-2-2h-3a1 1 0 0 1-1-1V4a2 2 0 0 0-4 0v5a1 1 0 0 1-1 1H6a2 2 0 0 0-2 2v1a1 1 0 0 0 1 1\" /> <path d=\"M19 14H5l-1.973 6.767A1 1 0 0 0 4 22h16a1 1 0 0 0 .973-1.233z\" /> <path d=\"m8 22 1-4\" />", "bubbles": "<path d=\"M7.001 15.085A1.5 1.5 0 0 1 9 16.5\" /> <circle cx=\"18.5\" cy=\"8.5\" r=\"3.5\" /> <circle cx=\"7.5\" cy=\"16.5\" r=\"5.5\" /> <circle cx=\"7.5\" cy=\"4.5\" r=\"2.5\" />", "buegeleisen": "<path d=\"M21 18H3a8 8 0 0 1 8-8h7a3 3 0 0 1 3 3z\"/><path d=\"M10 10V7a2 2 0 0 1 2-2h7\"/><path d=\"M8 21h.01M12 21h.01M16 21h.01\"/>", "calendar": "<path d=\"M8 2v3\" /> <path d=\"M16 2v3\" /> <rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"2\" /> <path d=\"M3 9h18\" />", "car": "<path d=\"M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2\" /> <circle cx=\"7\" cy=\"17\" r=\"2\" /> <path d=\"M9 17h6\" /> <circle cx=\"17\" cy=\"17\" r=\"2\" />", "cat": "<path d=\"M12 5c.67 0 1.35.09 2 .26 1.78-2 5.03-2.84 6.42-2.26 1.4.58-.42 7-.42 7 .57 1.07 1 2.24 1 3.44C21 17.9 16.97 21 12 21s-9-3-9-7.56c0-1.25.5-2.4 1-3.44 0 0-1.89-6.42-.5-7 1.39-.58 4.72.23 6.5 2.23A9.04 9.04 0 0 1 12 5Z\" /> <path d=\"M8 14v.5\" /> <path d=\"M16 14v.5\" /> <path d=\"M11.25 16.25h1.5L12 17l-.75-.75Z\" />", "check": "<path d=\"M20 6 9 17l-5-5\" />", "chef-hat": "<path d=\"M17 21a1 1 0 0 0 1-1v-5.35c0-.457.316-.844.727-1.041a4 4 0 0 0-2.134-7.589 5 5 0 0 0-9.186 0 4 4 0 0 0-2.134 7.588c.411.198.727.585.727 1.041V20a1 1 0 0 0 1 1Z\" /> <path d=\"M6 17h12\" />", "chevron-left": "<path d=\"m15 18-6-6 6-6\" />", "chevron-right": "<path d=\"m9 18 6-6-6-6\" />", "clock": "<circle cx=\"12\" cy=\"12\" r=\"10\" /> <path d=\"M12 6v6l4 2\" />", "coffee": "<path d=\"M10 2v2\" /> <path d=\"M14 2v2\" /> <path d=\"M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1\" /> <path d=\"M6 2v2\" />", "cooking-pot": "<path d=\"M2 12h20\" /> <path d=\"M20 12v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-8\" /> <path d=\"m4 8 16-4\" /> <path d=\"m8.86 6.78-.45-1.81a2 2 0 0 1 1.45-2.43l1.94-.48a2 2 0 0 1 2.43 1.46l.45 1.8\" />", "dog": "<path d=\"M11.25 16.25h1.5L12 17z\" /> <path d=\"M16 14v.5\" /> <path d=\"M4.42 11.247A13.152 13.152 0 0 0 4 14.556C4 18.728 7.582 21 12 21s8-2.272 8-6.444a11.702 11.702 0 0 0-.493-3.309\" /> <path d=\"M8 14v.5\" /> <path d=\"M8.5 8.5c-.384 1.05-1.083 2.028-2.344 2.5-1.931.722-3.576-.297-3.656-1-.113-.994 1.177-6.53 4-7 1.923-.321 3.651.845 3.651 2.235A7.497 7.497 0 0 1 14 5.277c0-1.39 1.844-2.598 3.767-2.277 2.823.47 4.113 6.006 4 7-.08.703-1.725 1.722-3.656 1-1.261-.472-1.855-1.45-2.239-2.5\" />", "door-open": "<path d=\"M10 21H2\" /> <path d=\"M10 3H7a2 2 0 00-2 2v16\" /> <path d=\"M14 12h.01\" /> <path d=\"M19 21V5a2 2 0 00-1.675-1.974l-6.163-1.013A1 1 0 0010 3v18a1 1 0 001.124.992z\" /> <path d=\"M22 21h-3\" />", "download": "<path d=\"M12 15V3\" /> <path d=\"M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4\" /> <path d=\"m7 10 5 5 5-5\" />", "droplet": "<path d=\"M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z\" />", "droplets": "<path d=\"M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05z\" /> <path d=\"M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97\" />", "dunstabzug": "<path d=\"M10 2h4v6h-4z\"/><path d=\"M10 8 4 14h16l-6-6\"/><path d=\"M4 14v2h16v-2\"/><path d=\"M8 19v2\"/><path d=\"M12 19v2\"/><path d=\"M16 19v2\"/>", "duschvorhang": "<path d=\"M3 3h18\"/><path d=\"M5 3v17c1 0 1.5-1 2.5-1s1.5 1 2.5 1 1.5-1 2.5-1 1.5 1 1.5 1V3\"/><path d=\"M8 3v13\"/><path d=\"M11 3v13\"/><path d=\"M19 3v3\"/><path d=\"M17.5 6h3\"/>", "eimer": "<path d=\"M4 9h16l-2 11a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1z\"/><path d=\"M6 9a6 6 0 0 1 12 0\"/><path d=\"M6.5 13h11\"/>", "fan": "<path d=\"M10.827 16.379a6.082 6.082 0 0 1-8.618-7.002l5.412 1.45a6.082 6.082 0 0 1 7.002-8.618l-1.45 5.412a6.082 6.082 0 0 1 8.618 7.002l-5.412-1.45a6.082 6.082 0 0 1-7.002 8.618l1.45-5.412Z\" /> <path d=\"M12 12v.01\" />", "fence": "<path d=\"M4 3 2 5v15c0 .6.4 1 1 1h2c.6 0 1-.4 1-1V5Z\" /> <path d=\"M6 8h4\" /> <path d=\"M6 18h4\" /> <path d=\"m12 3-2 2v15c0 .6.4 1 1 1h2c.6 0 1-.4 1-1V5Z\" /> <path d=\"M14 8h4\" /> <path d=\"M14 18h4\" /> <path d=\"m20 3-2 2v15c0 .6.4 1 1 1h2c.6 0 1-.4 1-1V5Z\" />", "fenster": "<rect x=\"4\" y=\"3\" width=\"16\" height=\"16\" rx=\"1\"/><path d=\"M12 3v16\"/><path d=\"M4 11h16\"/><path d=\"M2 21h20\"/><path d=\"M4 19v2M20 19v2\"/>", "fish": "<path d=\"M6.5 12c.94-3.46 4.94-6 8.5-6 3.56 0 6.06 2.54 7 6-.94 3.47-3.44 6-7 6s-7.56-2.53-8.5-6Z\" /> <path d=\"M18 12v.5\" /> <path d=\"M16 17.93a9.77 9.77 0 0 1 0-11.86\" /> <path d=\"M7 10.67C7 8 5.58 5.97 2.73 5.5c-1 1.5-1 5 .23 6.5-1.24 1.5-1.24 5-.23 6.5C5.58 18.03 7 16 7 13.33\" /> <path d=\"M10.46 7.26C10.2 5.88 9.17 4.24 8 3h5.8a2 2 0 0 1 1.98 1.67l.23 1.4\" /> <path d=\"m16.01 17.93-.23 1.4A2 2 0 0 1 13.8 21H9.5a5.96 5.96 0 0 0 1.49-3.98\" />", "flame": "<path d=\"M12 3q1 4 4 6.5t3 5.5a1 1 0 0 1-14 0 5 5 0 0 1 1-3 1 1 0 0 0 5 0c0-2-1.5-3-1.5-5q0-2 2.5-4\" />", "flower-2": "<path d=\"M12 5a3 3 0 1 1 3 3m-3-3a3 3 0 1 0-3 3m3-3v1M9 8a3 3 0 1 0 3 3M9 8h1m5 0a3 3 0 1 1-3 3m3-3h-1m-2 3v-1\" /> <circle cx=\"12\" cy=\"8\" r=\"2\" /> <path d=\"M12 10v12\" /> <path d=\"M12 22c4.2 0 7-1.667 7-5-4.2 0-7 1.667-7 5Z\" /> <path d=\"M12 22c-4.2 0-7-1.667-7-5 4.2 0 7 1.667 7 5Z\" />", "foehn": "<circle cx=\"9\" cy=\"9\" r=\"5.5\"/><circle cx=\"9\" cy=\"9\" r=\"2\"/><path d=\"M13.5 6H21v6h-7.5\"/><path d=\"M8 14.5 7 21h3l1-6.5\"/>", "footprints": "<path d=\"M4 16v-2.38C4 11.5 2.97 10.5 3 8c.03-2.72 1.49-6 4.5-6C9.37 2 10 3.8 10 5.5c0 3.11-2 5.66-2 8.68V16a2 2 0 1 1-4 0Z\" /> <path d=\"M20 20v-2.38c0-2.12 1.03-3.12 1-5.62-.03-2.72-1.49-6-4.5-6C14.63 6 14 7.8 14 9.5c0 3.11 2 5.66 2 8.68V20a2 2 0 1 0 4 0Z\" /> <path d=\"M16 17h4\" /> <path d=\"M4 13h4\" />", "frame": "<line x1=\"22\" x2=\"2\" y1=\"6\" y2=\"6\" /> <line x1=\"22\" x2=\"2\" y1=\"18\" y2=\"18\" /> <line x1=\"6\" x2=\"6\" y1=\"2\" y2=\"22\" /> <line x1=\"18\" x2=\"18\" y1=\"2\" y2=\"22\" />", "gamepad-2": "<line x1=\"6\" x2=\"10\" y1=\"11\" y2=\"11\" /> <line x1=\"8\" x2=\"8\" y1=\"9\" y2=\"13\" /> <line x1=\"15\" x2=\"15.01\" y1=\"12\" y2=\"12\" /> <line x1=\"18\" x2=\"18.01\" y1=\"10\" y2=\"10\" /> <path d=\"M17.32 5H6.68a4 4 0 0 0-3.978 3.59c-.006.052-.01.101-.017.152C2.604 9.416 2 14.456 2 16a3 3 0 0 0 3 3c1 0 1.5-.5 2-1l1.414-1.414A2 2 0 0 1 9.828 16h4.344a2 2 0 0 1 1.414.586L17 18c.5.5 1 1 2 1a3 3 0 0 0 3-3c0-1.545-.604-6.584-.685-7.258-.007-.05-.011-.1-.017-.151A4 4 0 0 0 17.32 5z\" />", "gefrierschrank": "<rect x=\"5\" y=\"2\" width=\"14\" height=\"20\" rx=\"2\"/><path d=\"M8 5v3\"/><path d=\"M12 11v7\"/><path d=\"M9 12.8l6 3.4\"/><path d=\"M15 12.8l-6 3.4\"/>", "glass-water": "<path d=\"M5.116 4.104A1 1 0 0 1 6.11 3h11.78a1 1 0 0 1 .994 1.105L17.19 20.21A2 2 0 0 1 15.2 22H8.8a2 2 0 0 1-2-1.79z\" /> <path d=\"M6 12a5 5 0 0 1 6 0 5 5 0 0 0 6 0\" />", "grid-2x2": "<path d=\"M12 3v18\" /> <path d=\"M3 12h18\" /> <rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"2\" />", "hammer": "<path d=\"m15 12-9.373 9.373a1 1 0 0 1-3.001-3L12 9\" /> <path d=\"m18 15 4-4\" /> <path d=\"m21.5 11.5-1.914-1.914A2 2 0 0 1 19 8.172v-.344a2 2 0 0 0-.586-1.414l-1.657-1.657A6 6 0 0 0 12.516 3H9l1.243 1.243A6 6 0 0 1 12 8.485V10l2 2h1.172a2 2 0 0 1 1.414.586L18.5 14.5\" />", "hand": "<path d=\"M18 11V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2\" /> <path d=\"M14 10V4a2 2 0 0 0-2-2a2 2 0 0 0-2 2v2\" /> <path d=\"M10 10.5V6a2 2 0 0 0-2-2a2 2 0 0 0-2 2v8\" /> <path d=\"M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15\" />", "heater": "<path d=\"M11 8c2-3-2-3 0-6\" /> <path d=\"M15.5 8c2-3-2-3 0-6\" /> <path d=\"M6 10h.01\" /> <path d=\"M6 14h.01\" /> <path d=\"M10 16v-4\" /> <path d=\"M14 16v-4\" /> <path d=\"M18 16v-4\" /> <path d=\"M20 6a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h3\" /> <path d=\"M5 20v2\" /> <path d=\"M19 20v2\" />", "heizkoerper": "<rect x=\"3\" y=\"6\" width=\"18\" height=\"12\" rx=\"2\"/><path d=\"M7 6v12M11 6v12M15 6v12M19 8v8\"/><path d=\"M5 18v2M19 18v2\"/>", "house": "<path d=\"M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8\" /> <path d=\"M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z\" />", "kaffeemaschine": "<path d=\"M4 21h15\"/><path d=\"M17 21V4a1 1 0 0 0-1-1H6a1 1 0 0 0-1 1v4h12\"/><path d=\"M9 8v2\"/><path d=\"M7 13h5v3a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2z\"/><path d=\"M12 14h.5a1 1 0 0 1 0 2H12\"/>", "katzenklo": "<path d=\"M3 12h18l-1.5 8a1 1 0 0 1-1 .8h-13a1 1 0 0 1-1-.8z\"/><path d=\"M5.5 15.5c1-.8 2-.8 3 0s2 .8 3 0 2-.8 3 0 2 .8 3 0\"/><path d=\"M14 9l4-6\"/><path d=\"M12.5 7.5l3 2.2\"/>", "key": "<path d=\"m2 21 9.6-9.6\" /> <path d=\"m7.5 15.5 2.3 2.3a1 1 0 0 1 0 1.4l-2.1 2.1a1 1 0 0 1-1.4 0L4 19\" /> <circle cx=\"15.5\" cy=\"7.5\" r=\"5.5\" />", "kissen": "<path d=\"M5 5c3 1 11 1 14 0 1 3 1 11 0 14-3-1-11-1-14 0-1-3-1-11 0-14z\"/><path d=\"M9 9.5c2 1 4 1 6 0\"/>", "klobuerste": "<path d=\"M12 2v11\"/><path d=\"M9 6.5c0 1.5 1.3 2.5 3 2.5s3-1 3-2.5\"/><path d=\"M7 13h10l-1 8H8z\"/>", "kochfeld": "<rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"2\"/><circle cx=\"8.5\" cy=\"8.5\" r=\"2.5\"/><circle cx=\"15.5\" cy=\"8.5\" r=\"2\"/><circle cx=\"8.5\" cy=\"15.5\" r=\"2\"/><circle cx=\"15.5\" cy=\"15.5\" r=\"2.5\"/>", "kommode": "<rect x=\"3\" y=\"3\" width=\"18\" height=\"16\" rx=\"1\"/><path d=\"M3 8.5h18M3 14h18\"/><path d=\"M11 5.8h2M11 11.2h2M11 16.6h2\"/><path d=\"M5 19v2M19 19v2\"/>", "lamp": "<path d=\"M12 12v6\" /> <path d=\"M4.077 10.615A1 1 0 0 0 5 12h14a1 1 0 0 0 .923-1.385l-3.077-7.384A2 2 0 0 0 15 2H9a2 2 0 0 0-1.846 1.23Z\" /> <path d=\"M8 20a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v1a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1z\" />", "lamp-ceiling": "<path d=\"M12 2v5\" /> <path d=\"M14.829 15.998a3 3 0 1 1-5.658 0\" /> <path d=\"M20.92 14.606A1 1 0 0 1 20 16H4a1 1 0 0 1-.92-1.394l3-7A1 1 0 0 1 7 7h10a1 1 0 0 1 .92.606z\" />", "lamp-desk": "<path d=\"M10.293 2.293a1 1 0 0 1 1.414 0l2.5 2.5 5.994 1.227a1 1 0 0 1 .506 1.687l-7 7a1 1 0 0 1-1.687-.506l-1.227-5.994-2.5-2.5a1 1 0 0 1 0-1.414z\" /> <path d=\"m14.207 4.793-3.414 3.414\" /> <path d=\"M3 20a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v1a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z\" /> <path d=\"m9.086 6.5-4.793 4.793a1 1 0 0 0-.18 1.17L7 18\" />", "lamp-floor": "<path d=\"M12 10v12\" /> <path d=\"M17.929 7.629A1 1 0 0 1 17 9H7a1 1 0 0 1-.928-1.371l2-5A1 1 0 0 1 9 2h6a1 1 0 0 1 .928.629z\" /> <path d=\"M9 22h6\" />", "laptop": "<path d=\"M18 5a2 2 0 0 1 2 2v8.526a2 2 0 0 0 .212.897l1.068 2.127a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45l1.068-2.127A2 2 0 0 0 4 15.526V7a2 2 0 0 1 2-2z\" /> <path d=\"M20.054 15.987H3.946\" />", "layers": "<path d=\"M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z\" /> <path d=\"M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12\" /> <path d=\"M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17\" />", "leaf": "<path d=\"M11 20a10 10 0 0010-10 25.9 25.9 0 00-1.04-7.281 1 1 0 00-1.755-.325C15.833 5.5 13 5.5 9.8 6.1A7 7 0 0011 20\" /> <path d=\"M2 21a5 5 0 012.911-4.544C7.613 15.212 8.351 15.24 11 13\" />", "lichtschalter": "<rect x=\"5\" y=\"3\" width=\"14\" height=\"18\" rx=\"2\"/><rect x=\"9\" y=\"7\" width=\"6\" height=\"10\" rx=\"1\"/><path d=\"M9 12h6\"/>", "lightbulb": "<path d=\"M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5\" /> <path d=\"M9 18h6\" /> <path d=\"M10 22h4\" />", "list-checks": "<path d=\"M13 5h8\" /> <path d=\"M13 12h8\" /> <path d=\"M13 19h8\" /> <path d=\"m3 17 2 2 4-4\" /> <path d=\"m3 7 2 2 4-4\" />", "luftreiniger": "<rect x=\"6\" y=\"2\" width=\"12\" height=\"20\" rx=\"3\"/><circle cx=\"12\" cy=\"8\" r=\"3\"/><path d=\"M9 14h6M9 17h6\"/>", "mailbox": "<path d=\"M22 17a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9.5C2 7 4 5 6.5 5H18c2.2 0 4 1.8 4 4v8Z\" /> <polyline points=\"15,9 18,9 18,11\" /> <path d=\"M6.5 5C9 5 11 7 11 9.5V17a2 2 0 0 1-2 2\" /> <line x1=\"6\" x2=\"7\" y1=\"10\" y2=\"10\" />", "microwave": "<rect width=\"20\" height=\"15\" x=\"2\" y=\"4\" rx=\"2\" /> <rect width=\"8\" height=\"7\" x=\"6\" y=\"8\" rx=\"1\" /> <path d=\"M18 8v7\" /> <path d=\"M6 19v2\" /> <path d=\"M18 19v2\" />", "milk": "<path d=\"M8 2h8\" /> <path d=\"M9 2v2.789a4 4 0 0 1-.672 2.219l-.656.984A4 4 0 0 0 7 10.212V20a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-9.789a4 4 0 0 0-.672-2.219l-.656-.984A4 4 0 0 1 15 4.788V2\" /> <path d=\"M7 15a6.472 6.472 0 0 1 5 0 6.47 6.47 0 0 0 5 0\" />", "monitor": "<rect width=\"20\" height=\"14\" x=\"2\" y=\"3\" rx=\"2\" /> <line x1=\"8\" x2=\"16\" y1=\"21\" y2=\"21\" /> <line x1=\"12\" x2=\"12\" y1=\"17\" y2=\"21\" />", "mopp": "<path d=\"M12 2v12\"/><path d=\"M7.5 14h9\"/><path d=\"M8 14l-2 7\"/><path d=\"M10.7 14l-.6 7\"/><path d=\"M13.3 14l.6 7\"/><path d=\"M16 14l2 7\"/>", "muelltonne": "<path d=\"M4 7h16\"/><path d=\"M5 4.5h14L20 7H4z\"/><path d=\"M5.5 7l1.3 12a1 1 0 0 0 1 .9h8.4a1 1 0 0 0 1-.9L18.5 7\"/><path d=\"M10 11v5M14 11v5\"/><circle cx=\"17.5\" cy=\"20.5\" r=\"1.3\"/>", "package": "<path d=\"M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z\" /> <path d=\"M12 22V12\" /> <polyline points=\"3.29 7 12 12 20.71 7\" /> <path d=\"m7.5 4.27 9 5.15\" />", "paint-roller": "<rect width=\"16\" height=\"6\" x=\"2\" y=\"2\" rx=\"2\" /> <path d=\"M10 16v-2a2 2 0 0 1 2-2h8a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2\" /> <rect width=\"4\" height=\"6\" x=\"8\" y=\"16\" rx=\"1\" />", "paw-print": "<circle cx=\"11\" cy=\"4\" r=\"2\" /> <circle cx=\"18\" cy=\"8\" r=\"2\" /> <circle cx=\"20\" cy=\"16\" r=\"2\" /> <path d=\"M9 10a5 5 0 0 1 5 5v3.5a3.5 3.5 0 0 1-6.84 1.045Q6.52 17.48 4.46 16.84A3.5 3.5 0 0 1 5.5 10Z\" />", "pencil": "<path d=\"M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z\" /> <path d=\"m15 5 4 4\" />", "pfanne": "<circle cx=\"9\" cy=\"13\" r=\"6\"/><path d=\"M14.2 10 21 6\"/><path d=\"M7 11.5c.8-.8 2.2-.8 3 0\"/>", "plant-pot": "<path d=\"M14 8.536V6a4 4 0 014-4h1.5a.5.5 0 01.5.5V4a4 4 0 01-4 4 4 4 0 00-4 4 5 5 0 01-8-4 5 5 0 018 4c0 2 1 3 1 5\" /> <path d=\"m18 17-1.085 3.58A2 2 0 0115 22H9.002a2 2 0 01-1.913-1.418L6 17\" /> <path d=\"M5 17h14\" />", "plug": "<path d=\"M12 22v-5\" /> <path d=\"M15 8V2\" /> <path d=\"M17 8a1 1 0 0 1 1 1v4a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1z\" /> <path d=\"M9 8V2\" />", "plus": "<path d=\"M5 12h14\" /> <path d=\"M12 5v14\" />", "printer": "<path d=\"M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2\" /> <path d=\"M6 9V3a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v6\" /> <rect x=\"6\" y=\"14\" width=\"12\" height=\"8\" rx=\"1\" />", "rabbit": "<path d=\"M13 16a3 3 0 0 1 2.24 5\" /> <path d=\"M18 12h.01\" /> <path d=\"M18 21h-8a4 4 0 0 1-4-4 7 7 0 0 1 7-7h.2L9.6 6.4a1 1 0 1 1 2.8-2.8L15.8 7h.2c3.3 0 6 2.7 6 6v1a2 2 0 0 1-2 2h-1a3 3 0 0 0-3 3\" /> <path d=\"M20 8.54V4a2 2 0 1 0-4 0v3\" /> <path d=\"M7.612 12.524a3 3 0 1 0-1.6 4.3\" />", "recycle": "<path d=\"M7 19H4.815a1.83 1.83 0 0 1-1.57-.881 1.785 1.785 0 0 1-.004-1.784L7.196 9.5\" /> <path d=\"M11 19h8.203a1.83 1.83 0 0 0 1.556-.89 1.784 1.784 0 0 0 0-1.775l-1.226-2.12\" /> <path d=\"m14 16-3 3 3 3\" /> <path d=\"M8.293 13.596 7.196 9.5 3.1 10.598\" /> <path d=\"m9.344 5.811 1.093-1.892A1.83 1.83 0 0 1 11.985 3a1.784 1.784 0 0 1 1.546.888l3.943 6.843\" /> <path d=\"m13.378 9.633 4.096 1.098 1.097-4.096\" />", "refrigerator": "<path d=\"M5 6a4 4 0 0 1 4-4h6a4 4 0 0 1 4 4v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6Z\" /> <path d=\"M5 10h14\" /> <path d=\"M15 7v6\" />", "regal": "<rect x=\"4\" y=\"2\" width=\"16\" height=\"20\" rx=\"1\"/><path d=\"M4 9h16\"/><path d=\"M4 15.5h16\"/><path d=\"M7 4.5V9M9.5 5.5V9\"/><path d=\"M13 11v4.5M15.5 11.5l1.5 4\"/><path d=\"M8 18h3\"/>", "rotate-ccw": "<path d=\"M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8\" /> <path d=\"M3 3v5h5\" />", "salad": "<path d=\"M19.496 12a2.5 2.5 0 00.399-2.214A2 2 0 0020.32 6.5 2 2 0 0019 3a2 2 0 00-1.5.68 2 2 0 00-3.287.424 2.5 2.5 0 00-3.189 2.06A3 3 0 0012 12l4-4\" /> <path d=\"M4 12a1 1 0 00-.99 1.133A9 9 0 0012 21a9 9 0 008.99-7.867A1 1 0 0020 12z\" /> <path d=\"M7 21h10\" /> <path d=\"M9.85 6.907A3.5 3.5 0 005.05 12\" />", "saugroboter": "<circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M6.5 8.5a7 7 0 0 1 11 0\"/><circle cx=\"12\" cy=\"14\" r=\"2\"/>", "schwamm": "<rect x=\"3\" y=\"7\" width=\"18\" height=\"11\" rx=\"2.5\"/><path d=\"M3 11h18\"/><circle cx=\"7.5\" cy=\"14.5\" r=\".7\"/><circle cx=\"12\" cy=\"15\" r=\".7\"/><circle cx=\"16.5\" cy=\"14.3\" r=\".7\"/>", "scissors": "<circle cx=\"6\" cy=\"6\" r=\"3\" /> <path d=\"M8.12 8.12 12 12\" /> <path d=\"M20 4 8.12 15.88\" /> <circle cx=\"6\" cy=\"18\" r=\"3\" /> <path d=\"M14.8 14.8 20 20\" />", "search": "<path d=\"m21 21-4.34-4.34\" /> <circle cx=\"11\" cy=\"11\" r=\"8\" />", "settings-2": "<path d=\"M14 17H5\" /> <path d=\"M19 7h-9\" /> <circle cx=\"17\" cy=\"17\" r=\"3\" /> <circle cx=\"7\" cy=\"7\" r=\"3\" />", "shirt": "<path d=\"M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z\" />", "shopping-basket": "<path d=\"m15 11-1 9\" /> <path d=\"m19 11-4-7\" /> <path d=\"M2 11h20\" /> <path d=\"m3.5 11 1.6 7.4a2 2 0 0 0 2 1.6h9.8a2 2 0 0 0 2-1.6l1.7-7.4\" /> <path d=\"M4.5 15.5h15\" /> <path d=\"m5 11 4-7\" /> <path d=\"m9 11 1 9\" />", "shopping-cart": "<path d=\"m2.05 2.05 1.099-.028a1 1 0 0 1 1.008.815l2.69 14.347A1 1 0 0 0 7.83 18H18\" /> <path d=\"M4.563 5h16.435a1 1 0 0 1 .981 1.204l-1.026 6.226A2 2 0 0 1 18.962 14H6.25\" /> <circle cx=\"18\" cy=\"20\" r=\"2\" /> <circle cx=\"8\" cy=\"20\" r=\"2\" />", "shovel": "<path d=\"M21.56 4.56a1.5 1.5 0 0 1 0 2.122l-.47.47a3 3 0 0 1-4.212-.03 3 3 0 0 1 0-4.243l.44-.44a1.5 1.5 0 0 1 2.121 0z\" /> <path d=\"M3 22a1 1 0 0 1-1-1v-3.586a1 1 0 0 1 .293-.707l3.355-3.355a1.205 1.205 0 0 1 1.704 0l3.296 3.296a1.205 1.205 0 0 1 0 1.704l-3.355 3.355a1 1 0 0 1-.707.293z\" /> <path d=\"m9 15 7.879-7.878\" />", "shower-head": "<path d=\"m4 4 2.5 2.5\" /> <path d=\"M13.5 6.5a4.95 4.95 0 0 0-7 7\" /> <path d=\"M15 5 5 15\" /> <path d=\"M14 17v.01\" /> <path d=\"M10 16v.01\" /> <path d=\"M13 13v.01\" /> <path d=\"M16 10v.01\" /> <path d=\"M11 20v.01\" /> <path d=\"M17 14v.01\" /> <path d=\"M20 11v.01\" />", "shrub": "<path d=\"M12 22v-5.172a2 2 0 0 0-.586-1.414L9.5 13.5\" /> <path d=\"M14.5 14.5 12 17\" /> <path d=\"M17 8.8A6 6 0 0 1 13.8 20H10A6.5 6.5 0 0 1 7 8a5 5 0 0 1 10 0z\" />", "smartphone": "<rect width=\"14\" height=\"20\" x=\"5\" y=\"2\" rx=\"2\" ry=\"2\" /> <path d=\"M12 18h.01\" />", "snowflake": "<path d=\"m10 20-1.25-2.5L6 18\" /> <path d=\"M10 4 8.75 6.5 6 6\" /> <path d=\"m14 20 1.25-2.5L18 18\" /> <path d=\"m14 4 1.25 2.5L18 6\" /> <path d=\"m17 21-3-6h-4\" /> <path d=\"m17 3-3 6 1.5 3\" /> <path d=\"M2 12h6.5L10 9\" /> <path d=\"m20 10-1.5 2 1.5 2\" /> <path d=\"M22 12h-6.5L14 15\" /> <path d=\"m4 10 1.5 2L4 14\" /> <path d=\"m7 21 3-6-1.5-3\" /> <path d=\"m7 3 3 6h4\" />", "soap-dispenser-droplet": "<path d=\"M10.5 2v4\" /> <path d=\"M14 2H7a2 2 0 0 0-2 2\" /> <path d=\"M19.29 14.76A6.67 6.67 0 0 1 17 11a6.6 6.6 0 0 1-2.29 3.76c-1.15.92-1.71 2.04-1.71 3.19 0 2.22 1.8 4.05 4 4.05s4-1.83 4-4.05c0-1.16-.57-2.26-1.71-3.19\" /> <path d=\"M9.607 21H6a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h7V7a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3\" />", "sofa": "<path d=\"M20 9V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v3\" /> <path d=\"M2 16a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-5a2 2 0 0 0-4 0v1.5a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5V11a2 2 0 0 0-4 0z\" /> <path d=\"M4 18v2\" /> <path d=\"M20 18v2\" /> <path d=\"M12 4v9\" />", "sparkle": "<path d=\"M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z\" />", "sparkles": "<path d=\"M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z\" /> <path d=\"M20 2v4\" /> <path d=\"M22 4h-4\" /> <circle cx=\"4\" cy=\"20\" r=\"2\" />", "spiegel": "<ellipse cx=\"12\" cy=\"10\" rx=\"6\" ry=\"8\"/><path d=\"M12 18v3\"/><path d=\"M8 21h8\"/><path d=\"M9.5 8l2-2\"/><path d=\"M10 11l4-4\"/>", "spray-can": "<path d=\"M3 3h.01\" /> <path d=\"M7 5h.01\" /> <path d=\"M11 7h.01\" /> <path d=\"M3 7h.01\" /> <path d=\"M7 9h.01\" /> <path d=\"M3 11h.01\" /> <rect width=\"4\" height=\"4\" x=\"15\" y=\"5\" /> <path d=\"m19 9 2 2v10c0 .6-.4 1-1 1h-6c-.6 0-1-.4-1-1V11l2-2\" /> <path d=\"m13 14 8-2\" /> <path d=\"m13 19 8-2\" />", "sprout": "<path d=\"M14 9.536V7a4 4 0 0 1 4-4h1.5a.5.5 0 0 1 .5.5V5a4 4 0 0 1-4 4 4 4 0 0 0-4 4c0 2 1 3 1 5a5 5 0 0 1-1 3\" /> <path d=\"M4 9a5 5 0 0 1 8 4 5 5 0 0 1-8-4\" /> <path d=\"M5 21h14\" />", "spuelbecken": "<path d=\"M2 11h20\"/><path d=\"M5 11v5a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-5\"/><path d=\"M12 11V5a2 2 0 0 1 2-2h1a2 2 0 0 1 2 2v1\"/>", "spuelmaschine": "<rect x=\"4\" y=\"3\" width=\"16\" height=\"18\" rx=\"2\"/><path d=\"M4 8h16\"/><path d=\"M7 5.5h2\"/><circle cx=\"16\" cy=\"5.5\" r=\".6\"/><path d=\"M8 18v-6\"/><path d=\"M12 18v-6\"/><path d=\"M16 18v-6\"/><path d=\"M7 18h10\"/>", "staubsauger": "<path d=\"M3 19a4 4 0 0 1 4-4h3a4 4 0 0 1 4 4v1H3z\"/><circle cx=\"6\" cy=\"20.5\" r=\".6\"/><path d=\"M11 15c0-5 2-10 6-10h1\"/><path d=\"M18 5l1.5 14\"/><path d=\"M17 20h5\"/>", "staubwedel": "<path d=\"M12 22v-9\"/><path d=\"M12 13c-3.5 0-6-3-6-6 0-2 1-4 2-5 0 3 2 4 4 5 2-1 4-2 4-5 1 1 2 3 2 5 0 3-2.5 6-6 6z\"/><path d=\"M12 8v5\"/>", "stuhl": "<path d=\"M7 2v19\"/><path d=\"M7 3h7a1 1 0 0 1 1 1v9\"/><path d=\"M7 13h10v8\"/><path d=\"M7 17h10\"/>", "sun": "<circle cx=\"12\" cy=\"12\" r=\"4\" /> <path d=\"M12 2v2\" /> <path d=\"M12 20v2\" /> <path d=\"m4.93 4.93 1.41 1.41\" /> <path d=\"m17.66 17.66 1.41 1.41\" /> <path d=\"M2 12h2\" /> <path d=\"M20 12h2\" /> <path d=\"m6.34 17.66-1.41 1.41\" /> <path d=\"m19.07 4.93-1.41 1.41\" />", "table": "<path d=\"M12 3v18\" /> <rect width=\"18\" height=\"18\" x=\"3\" y=\"3\" rx=\"2\" /> <path d=\"M3 9h18\" /> <path d=\"M3 15h18\" />", "teppich": "<rect x=\"4\" y=\"5\" width=\"16\" height=\"14\" rx=\"1\"/><rect x=\"8\" y=\"9\" width=\"8\" height=\"6\" rx=\"1\"/><path d=\"M6 2v3M10 2v3M14 2v3M18 2v3M6 19v3M10 19v3M14 19v3M18 19v3\"/>", "toaster": "<rect x=\"3\" y=\"9\" width=\"18\" height=\"11\" rx=\"3\"/><path d=\"M7 9V6.5a2 2 0 0 1 4 0V9\"/><path d=\"M13 9V6.5a2 2 0 0 1 4 0V9\"/><path d=\"M17 13h1.5\"/><path d=\"M6 20v1M18 20v1\"/>", "toilet": "<path d=\"M7 12h13a1 1 0 0 1 1 1 5 5 0 0 1-5 5h-.598a.5.5 0 0 0-.424.765l1.544 2.47a.5.5 0 0 1-.424.765H5.402a.5.5 0 0 1-.424-.765L7 18\" /> <path d=\"M8 18a5 5 0 0 1-5-5V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8\" />", "towel-rack": "<path d=\"M22 7h-2\" /> <path d=\"M6.5 3h11A2.5 2.5 0 0 1 20 5.5V20a1 1 0 0 1-1 1h-9a1 1 0 0 1-1-1V5.5a1 1 0 0 0-5 0V17a1 1 0 0 0 1 1h4\" /> <path d=\"M9 7H2\" />", "trash-2": "<path d=\"M10 11v6\" /> <path d=\"M14 11v6\" /> <path d=\"M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6\" /> <path d=\"M3 6h18\" /> <path d=\"M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2\" />", "trees": "<path d=\"M10 10v.2A3 3 0 0 1 8.9 16H5a3 3 0 0 1-1-5.8V10a3 3 0 0 1 6 0Z\" /> <path d=\"M7 16v6\" /> <path d=\"M13 19v3\" /> <path d=\"M12 19h8.3a1 1 0 0 0 .7-1.7L18 14h.3a1 1 0 0 0 .7-1.7L16 9h.2a1 1 0 0 0 .8-1.7L13 3l-1.4 1.5\" />", "treppe": "<path d=\"M3 20h5v-4h4v-4h4V8h5\"/><path d=\"M3 20v1M21 4v4\"/>", "trockner": "<rect x=\"4\" y=\"2\" width=\"16\" height=\"20\" rx=\"2\"/><path d=\"M4 6h16\"/><circle cx=\"12\" cy=\"14\" r=\"5\"/><path d=\"M9.8 12.8c1-.8 1.9.8 2.9 0s1.5-.6 1.5-.6\"/><path d=\"M9.8 15.3c1-.8 1.9.8 2.9 0s1.5-.6 1.5-.6\"/><path d=\"M7 4h.01\"/>", "tv": "<path d=\"m17 2-5 5-5-5\" /> <rect width=\"20\" height=\"15\" x=\"2\" y=\"7\" rx=\"2\" />", "umbrella": "<path d=\"M12 13v7a2 2 0 0 0 4 0\" /> <path d=\"M12 2v2\" /> <path d=\"M20.992 13a1 1 0 0 0 .97-1.274 10.284 10.284 0 0 0-19.923 0A1 1 0 0 0 3 13z\" />", "upload": "<path d=\"M12 3v12\" /> <path d=\"m17 8-5-5-5 5\" /> <path d=\"M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4\" />", "utensils": "<path d=\"M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2\" /> <path d=\"M7 2v20\" /> <path d=\"M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7\" />", "vogelkaefig": "<path d=\"M12 2v2\"/><path d=\"M6 20V10a6 6 0 0 1 12 0v10\"/><path d=\"M4 20h16\"/><path d=\"M10 4.4V20M14 4.4V20\"/><path d=\"M6 14h12\"/>", "waeschekorb": "<path d=\"M3 10h18\"/><path d=\"M4.5 10l1.4 10a1 1 0 0 0 1 .9h10.2a1 1 0 0 0 1-.9l1.4-10\"/><path d=\"M9 14v4M12 14v4M15 14v4\"/><path d=\"M7 10c0-3 2-5 4-4s3 0 4-1 2 2 2 5\"/>", "waeschestaender": "<path d=\"M5 21 12 3l7 18\"/><path d=\"M3 12h18\"/><path d=\"M7 12v4h3v-4\"/><path d=\"M14 12v5h3v-5\"/>", "waschbecken": "<path d=\"M3 12h18v1a7 7 0 0 1-7 7h-4a7 7 0 0 1-7-7z\"/><path d=\"M10 12V7a3 3 0 0 1 3-3h2v2\"/>", "washing-machine": "<path d=\"M3 6h3\" /> <path d=\"M17 6h.01\" /> <rect width=\"18\" height=\"20\" x=\"3\" y=\"2\" rx=\"2\" /> <circle cx=\"12\" cy=\"13\" r=\"5\" /> <path d=\"M12 18a2.5 2.5 0 0 0 0-5 2.5 2.5 0 0 1 0-5\" />", "wasserkocher": "<path d=\"M7 9h9l1 11H6z\"/><path d=\"M8 9l1-3h5l1 3\"/><path d=\"M11.5 4v2\"/><path d=\"M16.5 11H18a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-1.3\"/><path d=\"M7.4 11 4 9\"/><path d=\"M5 20h13\"/>", "wind": "<path d=\"M12.8 19.6A2 2 0 1 0 14 16H2\" /> <path d=\"M17.5 8a2.5 2.5 0 1 1 2 4H2\" /> <path d=\"M9.8 4.4A2 2 0 1 1 11 8H2\" />", "wine": "<path d=\"M8 22h8\" /> <path d=\"M7 10h10\" /> <path d=\"M12 15v7\" /> <path d=\"M12 15a5 5 0 0 0 5-5c0-2-.5-4-2-8H9c-1.5 4-2 6-2 8a5 5 0 0 0 5 5Z\" />", "wrench": "<path d=\"M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.106-3.105c.32-.322.863-.22.983.218a6 6 0 0 1-8.259 7.057l-7.91 7.91a1 1 0 0 1-2.999-3l7.91-7.91a6 6 0 0 1 7.057-8.259c.438.12.54.662.219.984z\" />", "zahnbuerste": "<path d=\"M12 22V11\"/><rect x=\"10\" y=\"3\" width=\"4\" height=\"8\" rx=\"1.5\"/><path d=\"M14 5h2.5M14 7h2.5M14 9h2.5\"/>"};
+const KEY = 'putzplan.v1';
+
+/* ---------- Hilfen ---------- */
+const $ = id => document.getElementById(id);
+const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;');
+const svg = n => '<svg class="i" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">' + (ICONS[n] || ICONS.sparkles) + '</svg>';
+const uid = () => Math.random().toString(36).slice(2, 10);
+
+const pad = n => String(n).padStart(2, '0');
+const iso = d => d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate());
+const parse = s => { const [y, m, d] = s.split('-').map(Number); return new Date(y, m - 1, d, 12); };
+const today = () => iso(new Date());
+const addDays = (s, n) => { const d = parse(s); d.setDate(d.getDate() + n); return iso(d); };
+const diff = (a, b) => Math.round((parse(b) - parse(a)) / 864e5);
+function addInt(s, every, unit) {
+  const d = parse(s);
+  if (unit === 'd') d.setDate(d.getDate() + every);
+  else if (unit === 'w') d.setDate(d.getDate() + 7 * every);
+  else {
+    const day = d.getDate();
+    d.setDate(1); d.setMonth(d.getMonth() + every);
+    const lastDay = new Date(d.getFullYear(), d.getMonth() + 1, 0).getDate();
+    d.setDate(Math.min(day, lastDay));
+  }
+  return iso(d);
+}
+const intDays = t => t.unit === 'd' ? t.every : t.unit === 'w' ? t.every * 7 : t.every * 30;
+
+const WD = ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag'];
+const MO = ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'];
+const MOS = ['Jan.', 'Feb.', 'März', 'Apr.', 'Mai', 'Juni', 'Juli', 'Aug.', 'Sept.', 'Okt.', 'Nov.', 'Dez.'];
+const fmtLong = s => { const d = parse(s); return WD[d.getDay()] + ', ' + d.getDate() + '. ' + MO[d.getMonth()]; };
+const fmt = s => { const d = parse(s); const y = d.getFullYear() !== new Date().getFullYear() ? ' ' + d.getFullYear() : ''; return d.getDate() + '. ' + MOS[d.getMonth()] + y; };
+
+function dueText(t) {
+  const d = diff(today(), t.due);
+  if (d < 0) return 'überfällig seit ' + (-d) + (d === -1 ? ' Tag' : ' Tagen');
+  if (d === 0) return 'heute';
+  if (d === 1) return 'morgen';
+  if (d < 7) return 'in ' + d + ' Tagen';
+  return 'am ' + fmt(t.due);
+}
+const dueCls = t => { const d = diff(today(), t.due); return d < 0 ? 'warn' : d === 0 ? 'today' : ''; };
+function freshness(t) {
+  const last = t.last || addInt(t.due, -t.every, t.unit);
+  const span = Math.max(1, diff(last, t.due));
+  const left = diff(today(), t.due);
+  return Math.max(0, Math.min(1, left / span));
+}
+function rhythmText(t) {
+  const n = t.every;
+  const base = t.unit === 'd' ? (n === 1 ? 'Täglich' : 'Alle ' + n + ' Tage')
+    : t.unit === 'w' ? (n === 1 ? 'Jede Woche' : 'Alle ' + n + ' Wochen')
+    : (n === 1 ? 'Jeden Monat' : 'Alle ' + n + ' Monate');
+  return base + (t.mode === 'fixed' ? ', fester Rhythmus' : ', ab Erledigung');
+}
+
+/* ---------- Daten ---------- */
+const SEED = [
+  ['Küche', 'cooking-pot', [
+    ['Arbeitsflächen wischen', 'sparkles', 3, 'd'], ['Herd reinigen', 'kochfeld', 1, 'w'],
+    ['Spülmaschine Filter reinigen', 'spuelmaschine', 1, 'm'], ['Kühlschrank auswischen', 'refrigerator', 1, 'm'],
+    ['Mikrowelle reinigen', 'microwave', 2, 'w'], ['Backofen reinigen', 'backofen', 2, 'm'],
+    ['Wasserkocher entkalken', 'wasserkocher', 1, 'm'], ['Mülleimer auswaschen', 'trash-2', 1, 'm']]],
+  ['Bad', 'bath', [
+    ['Toilette putzen', 'toilet', 1, 'w'], ['Waschbecken und Armaturen', 'waschbecken', 1, 'w'],
+    ['Dusche und Wanne', 'shower-head', 1, 'w'], ['Spiegel putzen', 'spiegel', 1, 'w'],
+    ['Handtücher wechseln', 'towel-rack', 1, 'w'], ['Abfluss reinigen', 'droplet', 1, 'm'],
+    ['Waschmaschine pflegen', 'washing-machine', 1, 'm']]],
+  ['Wohnzimmer', 'sofa', [
+    ['Staub wischen', 'staubwedel', 1, 'w'], ['Pflanzen gießen', 'plant-pot', 4, 'd'],
+    ['Sofa absaugen', 'sofa', 1, 'm'], ['Fenster putzen', 'fenster', 3, 'm']]],
+  ['Schlafzimmer', 'bed-double', [
+    ['Bettwäsche wechseln', 'bett_beziehen', 2, 'w'], ['Staub wischen', 'staubwedel', 2, 'w'],
+    ['Matratze absaugen', 'layers', 3, 'm'], ['Kleiderschrank ausmisten', 'shirt', 6, 'm']]],
+  ['Flur', 'door-open', [
+    ['Boden wischen', 'mopp', 1, 'w'], ['Fußmatte ausklopfen', 'footprints', 2, 'w'],
+    ['Schuhe ordnen', 'footprints', 1, 'm']]],
+  ['Ganze Wohnung', 'house', [
+    ['Staubsaugen', 'staubsauger', 1, 'w'], ['Böden wischen', 'mopp', 2, 'w'],
+    ['Müll rausbringen', 'trash-2', 1, 'w', 'fixed'], ['Altglas wegbringen', 'wine', 1, 'm'],
+    ['Heizkörper entstauben', 'heizkoerper', 1, 'm']]],
+];
+function seed() {
+  const t0 = today(); const S = { rooms: [], tasks: [] };
+  let k = 0;
+  SEED.forEach(([rn, ri, tasks]) => {
+    const r = { id: uid(), name: rn, icon: ri }; S.rooms.push(r);
+    tasks.forEach(([n, ic, every, unit, mode]) => {
+      const t = { id: uid(), name: n, room: r.id, icon: ic, every, unit, mode: mode || 'flex', hist: [] };
+      const span = intDays(t);
+      let off = 1 + (k * 5) % Math.min(span, 14);
+      if (k % 8 === 0) off = 0;
+      if (k === 4 || k === 15) off = -2;
+      t.due = addDays(t0, off);
+      t.last = addInt(t.due, -every, unit);
+      S.tasks.push(t); k++;
+    });
+  });
+  return S;
+}
+function load() {
+  try {
+    const s = JSON.parse(localStorage.getItem(KEY));
+    if (s && s.rooms && s.tasks) {
+      s.tasks.forEach(t => { if (t.icon === 'app-window') t.icon = 'fenster'; });
+      return s;
+    }
+  } catch (e) {}
+  return null;
+}
+let S = load() || seed();
+function save() { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} }
+save();
+const room = id => S.rooms.find(r => r.id === id) || { name: 'Ohne Zimmer', icon: 'house' };
+const task = id => S.tasks.find(t => t.id === id);
+
+function complete(t, date) {
+  const prev = JSON.parse(JSON.stringify(t));
+  if (t.mode === 'fixed') {
+    let next = addInt(t.due, t.every, t.unit);
+    while (next <= date) next = addInt(next, t.every, t.unit);
+    t.due = next;
+  } else {
+    t.due = addInt(date, t.every, t.unit);
+  }
+  t.last = date;
+  t.hist = [date].concat(t.hist || []).slice(0, 30);
+  save();
+  return prev;
+}
+function restore(prev) {
+  const i = S.tasks.findIndex(x => x.id === prev.id);
+  if (i >= 0) S.tasks[i] = prev; save();
+}
+
+/* ---------- Ansicht ---------- */
+let view = 'due';           // 'due' | 'rooms' | 'room'
+let curRoom = null;
+let showLater = false;
+try { const v = localStorage.getItem(KEY + '.view'); if (v === 'rooms') view = v; } catch (e) {}
+
+function row(t, showRoom) {
+  const f = Math.round(freshness(t) * 100);
+  const cls = dueCls(t);
+  return '<div class="row" data-id="' + t.id + '">' +
+    '<div class="tile' + (cls === 'warn' ? ' warn' : '') + '">' + svg(t.icon) + '</div>' +
+    '<div class="txt"><div class="nm">' + esc(t.name) + '</div>' +
+    '<div class="meta">' + (showRoom ? '<span>' + esc(room(t.room).name) + '</span>' : '') +
+    '<span class="due ' + cls + '">' + dueText(t) + '</span></div>' +
+    '<div class="fresh"><i style="width:' + f + '%"></i></div></div>' +
+    '<button class="chk" aria-label="Erledigt">' + svg('check') + '</button></div>';
+}
+const sortDue = (a, b) => a.due < b.due ? -1 : a.due > b.due ? 1 : a.name.localeCompare(b.name);
+
+function header(title, extra) {
+  return '<div class="hd-top"><span class="date">' + fmtLong(today()) + '</span>' +
+    '<button class="ib" data-act="settings" aria-label="Einstellungen">' + svg('settings-2') + '</button></div>' +
+    '<h1>' + title + '</h1>' + (extra || '') +
+    '<div class="seg"><button data-view="due" class="' + (view === 'due' ? 'on' : '') + '">Anstehend</button>' +
+    '<button data-view="rooms" class="' + (view === 'rooms' ? 'on' : '') + '">Zimmer</button></div>';
+}
+
+function render() {
+  const t0 = today();
+  const app = $('app');
+  if (view === 'room') return renderRoom();
+  const tasks = S.tasks.slice().sort(sortDue);
+  const over = tasks.filter(t => t.due < t0);
+  const now = tasks.filter(t => t.due === t0);
+  const open = over.length + now.length;
+  const summary = '<p class="summary">' + (open ? (open === 1 ? 'Eine Aufgabe steht an' : open + ' Aufgaben stehen an') : 'Für heute ist alles erledigt') + '</p>';
+  if (view === 'due') {
+    const soon = tasks.filter(t => t.due > t0 && diff(t0, t.due) <= 7);
+    const later = tasks.filter(t => diff(t0, t.due) > 7);
+    let h = header('Heute', summary);
+    if (!open) h += '<div class="empty"><div class="tile">' + svg('sparkles') + '</div><b>Alles sauber</b>Nichts steht heute an.</div>';
+    if (over.length) h += sec('Überfällig', over, true, 'warn');
+    if (now.length) h += sec('Heute', now, true);
+    if (soon.length) h += sec('Nächste 7 Tage', soon, true);
+    if (later.length) {
+      h += '<div class="sec"><div class="sec-h"><span>Später</span><span>' + later.length + '</span></div><div class="list">' +
+        (showLater ? later.map(t => row(t, true)).join('') : '') +
+        '<button class="more" data-act="later">' + (showLater ? 'Weniger anzeigen' : 'Alle anzeigen') + '</button></div></div>';
+    }
+    app.innerHTML = h;
+  } else {
+    let h = header('Zimmer', summary) + '<div class="rooms">';
+    S.rooms.forEach(r => {
+      const ts = S.tasks.filter(t => t.room === r.id);
+      const due = ts.filter(t => t.due <= t0).length;
+      const f = ts.length ? Math.round(ts.reduce((a, t) => a + freshness(t), 0) / ts.length * 100) : 100;
+      h += '<button class="rc" data-room="' + r.id + '"><div class="tile">' + svg(r.icon) + '</div>' +
+        '<div><div class="nm">' + esc(r.name) + '</div><div class="sub' + (due ? ' warn' : '') + '">' +
+        (due ? due + ' fällig' : ts.length ? 'alles erledigt' : 'keine Aufgaben') + '</div></div>' +
+        '<div class="fresh"><i style="width:' + f + '%"></i></div></button>';
+    });
+    h += '</div>';
+    app.innerHTML = h;
+  }
+}
+function sec(title, list, showRoom, cls) {
+  return '<div class="sec"><div class="sec-h ' + (cls || '') + '"><span>' + title + '</span><span>' + list.length + '</span></div>' +
+    '<div class="list">' + list.map(t => row(t, showRoom)).join('') + '</div></div>';
+}
+function renderRoom() {
+  const r = room(curRoom);
+  const ts = S.tasks.filter(t => t.room === curRoom).sort(sortDue);
+  let h = '<div class="hd-top"><button class="ib back" data-act="back" aria-label="Zurück">' + svg('chevron-left') + '</button>' +
+    '<button class="ib" data-act="editRoom" aria-label="Zimmer bearbeiten">' + svg('pencil') + '</button></div>' +
+    '<h1 class="room-title"><span class="tile lg">' + svg(r.icon) + '</span>' + esc(r.name) + '</h1>' +
+    '<p class="summary">' + (ts.length === 1 ? 'Eine Aufgabe' : ts.length + ' Aufgaben') + '</p>' +
+    '<div class="list">' + ts.map(t => row(t, false)).join('') +
+    '<div class="row add-row" data-act="new"><div class="tile">' + svg('plus') + '</div><div class="txt"><div class="nm">Aufgabe hinzufügen</div></div></div></div>';
+  $('app').innerHTML = h;
+}
+
+/* ---------- Abhaken ---------- */
+let toastTimer = null, undoPrev = null;
+function toast(text, prev) {
+  undoPrev = prev;
+  $('toastText').textContent = text;
+  $('toastUndo').style.display = prev ? '' : 'none';
+  $('toast').classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => $('toast').classList.remove('show'), 4200);
+}
+$('toastUndo').addEventListener('click', () => {
+  if (undoPrev) { restore(undoPrev); undoPrev = null; render(); }
+  $('toast').classList.remove('show');
+});
+function doComplete(id, date, rowEl) {
+  const t = task(id); if (!t) return;
+  const prev = complete(t, date);
+  toast('Erledigt. Wieder fällig am ' + fmt(t.due), prev);
+  if (rowEl) {
+    rowEl.querySelector('.chk').classList.add('done');
+    setTimeout(() => rowEl.classList.add('gone'), 260);
+    setTimeout(render, 600);
+  } else render();
+}
+
+/* ---------- Blätter ---------- */
+const sheet = $('sheet');
+function openSheet(html) {
+  sheet.innerHTML = '<div class="grab"></div>' + html;
+  sheet.scrollTop = 0;
+  document.body.classList.add('sheet-open');
+}
+function closeSheet() { document.body.classList.remove('sheet-open'); sheet.style.transform = ''; }
+$('veil').addEventListener('click', closeSheet);
+let sy = null;
+sheet.addEventListener('touchstart', e => { sy = sheet.scrollTop <= 0 ? e.touches[0].clientY : null; }, { passive: true });
+sheet.addEventListener('touchmove', e => {
+  if (sy === null) return; const d = e.touches[0].clientY - sy;
+  if (d > 0) { sheet.style.transition = 'none'; sheet.style.transform = 'translateY(' + d + 'px)'; }
+}, { passive: true });
+sheet.addEventListener('touchend', e => {
+  if (sy === null) return; const d = e.changedTouches[0].clientY - sy; sy = null;
+  sheet.style.transition = ''; if (d > 90) closeSheet(); else sheet.style.transform = '';
+});
+
+function openDetail(id) {
+  const t = task(id); const r = room(t.room);
+  const hist = (t.hist || []).slice(0, 6);
+  openSheet(
+    '<div class="sh-head"><div class="tile lg' + (dueCls(t) === 'warn' ? ' warn' : '') + '">' + svg(t.icon) + '</div>' +
+    '<div><h2>' + esc(t.name) + '</h2><div class="sub">' + esc(r.name) + '</div></div></div>' +
+    '<div class="facts"><div><span>Fällig</span><b>' + fmt(t.due) + (dueText(t).startsWith('am ') ? '' : ', ' + dueText(t)) + '</b></div>' +
+    '<div><span>Rhythmus</span><b>' + rhythmText(t) + '</b></div>' +
+    '<div><span>Zuletzt</span><b>' + (t.last ? fmt(t.last) : 'noch nie') + '</b></div></div>' +
+    '<button class="btn pri" data-act="doneToday">' + svg('check') + 'Heute erledigt</button>' +
+    '<div class="btn-row"><button class="btn" data-act="doneYesterday">Gestern</button>' +
+    '<label class="btn">Anderer Tag<input type="date" id="doneDate" max="' + today() + '"></label></div>' +
+    '<div class="lbl">Verschieben</div><div class="chips">' +
+    '<button class="chip" data-post="1">1 Tag</button><button class="chip" data-post="3">3 Tage</button>' +
+    '<button class="chip" data-post="7">1 Woche</button></div>' +
+    (hist.length ? '<div class="lbl">Verlauf</div><div class="hist">' + hist.map((d, i) => {
+      const gap = hist[i + 1] ? diff(hist[i + 1], d) : null;
+      return '<div>' + fmt(d) + (gap !== null ? '<span>' + gap + (gap === 1 ? ' Tag' : ' Tage') + ' Abstand</span>' : '') + '</div>';
+    }).join('') + '</div>' : '') +
+    '<div class="btn-row" style="margin-top:22px"><button class="btn" data-act="edit">' + svg('pencil') + 'Bearbeiten</button></div>'
+  );
+  sheet.dataset.id = id;
+  const dd = $('doneDate');
+  dd.addEventListener('change', () => { if (dd.value) { closeSheet(); doComplete(id, dd.value > today() ? today() : dd.value); } });
+}
+
+/* Symbolkatalog */
+const CATS = [
+  ['Reinigen', [
+    ['sparkles', 'Glanz', 'polieren,glänzen,sauber,putzen,arbeitsflächen'],
+    ['sparkle', 'Funkeln', 'polieren,glas'],
+    ['broom', 'Besen', 'fegen,kehren,besen'],
+    ['staubsauger', 'Staubsauger', 'staubsaugen,saugen,staubsauger,absaugen'],
+    ['saugroboter', 'Saugroboter', 'saugroboter,roboter'],
+    ['mopp', 'Wischmopp', 'wischen,boden wischen,böden,boden,mopp,feucht'],
+    ['eimer', 'Eimer', 'eimer,putzwasser'],
+    ['schwamm', 'Schwamm', 'schwamm,schrubben,scheuern'],
+    ['brush-cleaning', 'Bürste', 'bürste,schrubben,fugen'],
+    ['spray-can', 'Sprühflasche', 'sprühen,spray,reiniger,desinfizieren'],
+    ['staubwedel', 'Staubwedel', 'staubwedel,abstauben,entstauben,staub wischen,staub'],
+    ['abzieher', 'Abzieher', 'abzieher,fenster abziehen,duschwand'],
+    ['hand', 'Handschuhe', 'handschuhe,hände'],
+    ['droplets', 'Wasser', 'nass,wasser,armaturen'],
+    ['droplet', 'Tropfen', 'abfluss,entkalken,kalk'],
+    ['bubbles', 'Schaum', 'seife,schaum,einweichen'],
+    ['wind', 'Lüften', 'lüften,frische luft'],
+  ]],
+  ['Küche', [
+    ['cooking-pot', 'Topf', 'topf,kochen'],
+    ['kochfeld', 'Kochfeld', 'herd,kochfeld,ceranfeld,induktion,platten'],
+    ['backofen', 'Backofen', 'backofen,ofen,backblech'],
+    ['dunstabzug', 'Dunstabzug', 'dunstabzug,abzugshaube,fettfilter,haube'],
+    ['refrigerator', 'Kühlschrank', 'kühlschrank'],
+    ['gefrierschrank', 'Gefrierschrank', 'gefrierschrank,gefrierfach,tiefkühl,abtauen,gefrier'],
+    ['microwave', 'Mikrowelle', 'mikrowelle'],
+    ['spuelmaschine', 'Spülmaschine', 'spülmaschine,geschirrspüler,spülmaschinenfilter'],
+    ['spuelbecken', 'Spüle', 'spüle,spülbecken,abwasch'],
+    ['kaffeemaschine', 'Kaffeemaschine', 'kaffeemaschine,siebträger,kaffeevollautomat,espresso,brühgruppe'],
+    ['coffee', 'Tasse', 'kaffee,tasse,tee'],
+    ['wasserkocher', 'Wasserkocher', 'wasserkocher,kessel'],
+    ['toaster', 'Toaster', 'toaster,krümel'],
+    ['blender', 'Mixer', 'mixer,küchenmaschine,thermomix'],
+    ['pfanne', 'Pfanne', 'pfanne,braten'],
+    ['utensils', 'Besteck', 'besteck,geschirr,schublade'],
+    ['chef-hat', 'Kochmütze', 'kochen,rezepte'],
+    ['glass-water', 'Glas', 'gläser,wasserfilter,trinken'],
+    ['wine', 'Weinglas', 'altglas,flaschen,wein'],
+    ['milk', 'Milch', 'milch,vorrat'],
+    ['salad', 'Schüssel', 'vorratsschrank,lebensmittel,schüssel'],
+  ]],
+  ['Bad', [
+    ['bath', 'Badewanne', 'badewanne,wanne,bad'],
+    ['shower-head', 'Dusche', 'dusche,duschkopf,brause'],
+    ['duschvorhang', 'Duschvorhang', 'duschvorhang,vorhang dusche'],
+    ['toilet', 'Toilette', 'toilette,klo,wc'],
+    ['klobuerste', 'Klobürste', 'klobürste,klobürstenhalter'],
+    ['waschbecken', 'Waschbecken', 'waschbecken,becken,waschtisch'],
+    ['spiegel', 'Spiegel', 'spiegel'],
+    ['towel-rack', 'Handtuchhalter', 'handtuch,handtücher,badetuch'],
+    ['soap-dispenser-droplet', 'Seifenspender', 'seife,seifenspender,nachfüllen'],
+    ['zahnbuerste', 'Zahnbürste', 'zahnbürste,zahnputzbecher,bürstenkopf'],
+    ['foehn', 'Föhn', 'föhn,fön,haare'],
+    ['grid-2x2', 'Fliesen', 'fliesen,kacheln,fugen'],
+    ['scissors', 'Schere', 'schere,schneiden'],
+  ]],
+  ['Wäsche', [
+    ['washing-machine', 'Waschmaschine', 'waschmaschine,waschen,flusensieb'],
+    ['trockner', 'Trockner', 'trockner,wäschetrockner,flusen'],
+    ['shirt', 'Kleidung', 'wäsche,kleidung,kleiderschrank,ausmisten,kleider'],
+    ['waeschekorb', 'Wäschekorb', 'wäschekorb,schmutzwäsche,wäsche sortieren'],
+    ['waeschestaender', 'Wäscheständer', 'wäscheständer,aufhängen,abhängen'],
+    ['buegeleisen', 'Bügeleisen', 'bügeln,bügeleisen,wäsche bügeln'],
+    ['bett_beziehen', 'Bett beziehen', 'bettwäsche,bett beziehen,laken'],
+  ]],
+  ['Wohnen', [
+    ['sofa', 'Sofa', 'sofa,couch'],
+    ['armchair', 'Sessel', 'sessel'],
+    ['kissen', 'Kissen', 'kissen,kissenbezug,sofakissen'],
+    ['teppich', 'Teppich', 'teppich,läufer'],
+    ['table', 'Tisch', 'tisch,esstisch,couchtisch'],
+    ['stuhl', 'Stuhl', 'stuhl,stühle'],
+    ['regal', 'Regal', 'regal,bücherregal'],
+    ['kommode', 'Kommode', 'kommode,schublade,schubladen'],
+    ['archive', 'Schrank', 'schrank,keller,abstellraum,aufräumen'],
+    ['bed-double', 'Bett', 'bett,doppelbett,schlafzimmer'],
+    ['bed-single', 'Einzelbett', 'einzelbett,gästebett'],
+    ['layers', 'Matratze', 'matratze,decke,bettdecke'],
+    ['tv', 'Fernseher', 'fernseher,tv,bildschirm'],
+    ['laptop', 'Laptop', 'laptop,computer,tastatur'],
+    ['monitor', 'Monitor', 'monitor,schreibtisch'],
+    ['book', 'Bücher', 'buch,bücher'],
+    ['lamp', 'Lampe', 'lampe,lampenschirm'],
+    ['lamp-ceiling', 'Deckenlampe', 'deckenlampe,leuchte'],
+    ['lamp-floor', 'Stehlampe', 'stehlampe'],
+    ['lamp-desk', 'Schreibtischlampe', 'schreibtisch,schreibtischlampe,arbeitsplatz'],
+    ['lichtschalter', 'Lichtschalter', 'lichtschalter,schalter,steckdosen'],
+    ['fenster', 'Fenster', 'fenster,fensterbank,fensterrahmen,scheiben'],
+    ['blinds', 'Jalousie', 'jalousie,rollo,rolladen,vorhang,gardine,gardinen'],
+    ['door-open', 'Tür', 'tür,türen,türklinke,klinken'],
+    ['footprints', 'Schuhe', 'schuh,schuhe,fußmatte,matte'],
+    ['treppe', 'Treppe', 'treppe,treppenhaus,stufen'],
+    ['heizkoerper', 'Heizkörper', 'heizkörper,heizung,heizkörper entstauben'],
+    ['heater', 'Heizlüfter', 'heizlüfter,heizen'],
+    ['fan', 'Ventilator', 'ventilator'],
+    ['air-vent', 'Lüftung', 'lüftung,filter,klimaanlage'],
+    ['luftreiniger', 'Luftreiniger', 'luftreiniger,luftbefeuchter,luftfilter'],
+    ['snowflake', 'Kälte', 'kälte,klima'],
+    ['flame', 'Kamin', 'kamin,ofen heizen,kerzen'],
+    ['frame', 'Bilderrahmen', 'bilderrahmen,bilder,deko'],
+    ['clock', 'Uhr', 'uhr,wecker'],
+    ['plant-pot', 'Zimmerpflanze', 'pflanze,pflanzen,gießen,umtopfen,zimmerpflanze'],
+    ['gamepad-2', 'Spielzeug', 'spielzeug,spielkonsole,konsole'],
+    ['baby', 'Baby', 'baby,kinderzimmer,kind'],
+  ]],
+  ['Draußen', [
+    ['house', 'Haus', 'haus,wohnung,ganze wohnung'],
+    ['sun', 'Balkon', 'balkon,terrasse,sonne'],
+    ['flower-2', 'Blume', 'blumen,blume,balkonkasten'],
+    ['sprout', 'Setzling', 'beet,setzling,kräuter'],
+    ['leaf', 'Blatt', 'laub,blätter'],
+    ['trees', 'Garten', 'garten,bäume'],
+    ['shrub', 'Hecke', 'hecke,strauch,büsche'],
+    ['shovel', 'Schaufel', 'schaufel,umgraben,schnee schippen'],
+    ['fence', 'Zaun', 'zaun'],
+    ['muelltonne', 'Mülltonne', 'mülltonne,tonne,biotonne,restmüll'],
+    ['trash-2', 'Mülleimer', 'müll,mülleimer,abfall,müll rausbringen'],
+    ['recycle', 'Recycling', 'recycling,gelber sack,papier,pfand,altpapier'],
+    ['package', 'Paket', 'paket,karton,kartons'],
+    ['mailbox', 'Briefkasten', 'briefkasten,post'],
+    ['car', 'Auto', 'auto,wagen,auto saugen'],
+    ['bike', 'Fahrrad', 'fahrrad,rad'],
+    ['umbrella', 'Schirm', 'schirm,sonnenschirm'],
+  ]],
+  ['Tiere', [
+    ['cat', 'Katze', 'katze'],
+    ['katzenklo', 'Katzenklo', 'katzenklo,streu,katzenstreu'],
+    ['dog', 'Hund', 'hund,hundekorb'],
+    ['paw-print', 'Pfote', 'pfote,haustier,tierhaare,napf'],
+    ['bone', 'Knochen', 'knochen,futter'],
+    ['aquarium', 'Aquarium', 'aquarium,fische'],
+    ['fish', 'Fisch', 'fisch'],
+    ['vogelkaefig', 'Vogelkäfig', 'vogelkäfig,käfig,vogel'],
+    ['bird', 'Vogel', 'vogelhaus,vogelfutter'],
+    ['rabbit', 'Kaninchen', 'kaninchen,hase,stall'],
+  ]],
+  ['Sonstiges', [
+    ['shopping-cart', 'Einkauf', 'einkaufen,einkauf'],
+    ['shopping-basket', 'Korb', 'korb,vorräte'],
+    ['wrench', 'Werkzeug', 'reparieren,werkzeug'],
+    ['hammer', 'Hammer', 'hammer,aufhängen'],
+    ['paint-roller', 'Farbroller', 'streichen,farbe,wand'],
+    ['lightbulb', 'Glühbirne', 'glühbirne,birne wechseln,licht'],
+    ['plug', 'Stecker', 'stecker,kabel'],
+    ['battery-charging', 'Batterie', 'batterie,akku,rauchmelder'],
+    ['key', 'Schlüssel', 'schlüssel'],
+    ['smartphone', 'Handy', 'handy,smartphone,bildschirm putzen'],
+    ['printer', 'Drucker', 'drucker'],
+    ['calendar', 'Kalender', 'termin,kalender'],
+    ['list-checks', 'Liste', 'liste,aufgaben'],
+  ]],
+];
+const ROOM_PICK = ['cooking-pot', 'bath', 'toilet', 'sofa', 'bed-double', 'bed-single', 'door-open', 'treppe', 'lamp-desk', 'baby',
+  'washing-machine', 'house', 'sun', 'trees', 'archive', 'regal', 'kommode', 'car', 'shirt', 'tv', 'book', 'cat', 'dog', 'table'];
+
+const ALL = [];
+CATS.forEach(([c, list]) => list.forEach(([n, label, kw]) => ALL.push({ n, label, cat: c, kw: (label + ',' + kw).toLowerCase().split(',').map(x => x.trim()).filter(x => x.length > 2) })));
+function guessIcon(name) {
+  const s = name.toLowerCase(); let best = null, len = 0;
+  ALL.forEach(e => e.kw.forEach(w => { if (w.length > len && s.includes(w)) { best = e.n; len = w.length; } }));
+  return best;
+}
+function iconGrid(q) {
+  const btn = e => '<button data-i="' + e.n + '" class="' + (F.icon === e.n ? 'on' : '') + '" aria-label="' + esc(e.label) + '">' + svg(e.n) + '</button>';
+  q = (q || '').trim().toLowerCase();
+  if (q) {
+    const hits = ALL.filter(e => e.kw.some(w => w.includes(q)) || e.label.toLowerCase().includes(q));
+    return hits.length ? '<div class="icons">' + hits.map(btn).join('') + '</div>' : '<p class="hint">Kein passendes Symbol gefunden.</p>';
+  }
+  return CATS.map(([c]) => '<div class="icat">' + c + '</div><div class="icons">' + ALL.filter(e => e.cat === c).map(btn).join('') + '</div>').join('');
+}
+
+let F = null; // Formularzustand
+function openEdit(id, presetRoom) {
+  const t = id ? task(id) : null;
+  F = t ? { ...t, iconManual: true } : {
+    id: null, name: '', room: presetRoom || (S.rooms[0] && S.rooms[0].id), icon: null, every: 1, unit: 'w', mode: 'flex',
+    due: today(), iconManual: false };
+  if (!F.icon) F.icon = room(F.room).icon;
+  drawEdit();
+  setTimeout(() => { if (!t) $('fName').focus(); }, 380);
+}
+function drawEdit() {
+  const editing = !!F.id;
+  openSheet(
+    '<h2 class="t">' + (editing ? 'Aufgabe bearbeiten' : 'Neue Aufgabe') + '</h2>' +
+    '<div class="name-row"><div class="tile lg" id="fPrev">' + svg(F.icon) + '</div>' +
+    '<label class="fld"><span>Name</span><input id="fName" value="' + esc(F.name) + '" placeholder="z. B. Fenster putzen" autocomplete="off"></label></div>' +
+    '<div class="lbl">Zimmer</div><div class="chips" id="fRoom">' +
+    S.rooms.map(r => '<button class="chip' + (r.id === F.room ? ' on' : '') + '" data-r="' + r.id + '">' + svg(r.icon) + esc(r.name) + '</button>').join('') + '</div>' +
+    '<div class="lbl">Intervall</div><div class="interval"><div class="stepper"><button data-step="-1">−</button><b id="fEvery">' + F.every + '</b><button data-step="1">+</button></div>' +
+    '<div class="seg" id="fUnit">' + [['d', 'Tage'], ['w', 'Wochen'], ['m', 'Monate']].map(([u, l]) => '<button data-u="' + u + '" class="' + (F.unit === u ? 'on' : '') + '">' + l + '</button>').join('') + '</div></div>' +
+    '<div class="lbl">Nächster Termin</div><div class="seg mode-seg" id="fMode">' +
+    '<button data-m="flex" class="' + (F.mode === 'flex' ? 'on' : '') + '">Ab Erledigung</button>' +
+    '<button data-m="fixed" class="' + (F.mode === 'fixed' ? 'on' : '') + '">Fester Rhythmus</button></div>' +
+    '<p class="hint" id="fHint">' + modeHint() + '</p>' +
+    '<div class="lbl">Fällig am</div><label class="fld"><span>Datum</span><input type="date" id="fDue" value="' + F.due + '"></label>' +
+    '<div class="lbl">Symbol</div><label class="fld search">' + svg('search') + '<input id="fIconQ" type="search" placeholder="Suchen, z. B. Kaffeemaschine" autocomplete="off"></label>' +
+    '<div id="fIcon">' + iconGrid('') + '</div>' +
+    '<div style="height:22px"></div><button class="btn pri" data-act="saveTask">Speichern</button>' +
+    (editing ? '<button class="btn danger" data-act="delTask" style="margin-top:6px">Aufgabe löschen</button>' : '')
+  );
+  sheet.dataset.form = 'task';
+  const nm = $('fName');
+  nm.addEventListener('input', () => {
+    F.name = nm.value;
+    if (!F.iconManual) { const g = guessIcon(F.name); const ic = g || room(F.room).icon; if (ic !== F.icon) { F.icon = ic; markIcon(); } }
+  });
+  $('fDue').addEventListener('change', e => { if (e.target.value) F.due = e.target.value; });
+  $('fIconQ').addEventListener('input', e => { $('fIcon').innerHTML = iconGrid(e.target.value); });
+}
+function modeHint() {
+  return F.mode === 'fixed'
+    ? 'Der Termin bleibt im festen Takt, auch wenn du später dran bist. Gut für Müll oder feste Wochentage.'
+    : 'Nach dem Abhaken beginnt das Intervall neu, gerechnet ab dem Tag, an dem du es erledigt hast.';
+}
+function markIcon() {
+  sheet.querySelectorAll('#fIcon button').forEach(b => b.classList.toggle('on', b.dataset.i === F.icon));
+  const pv = $('fPrev'); if (pv) pv.innerHTML = svg(F.icon);
+}
+
+let RF = null;
+function openRoomEdit(id) {
+  const r = id ? S.rooms.find(x => x.id === id) : null;
+  RF = r ? { ...r } : { id: null, name: '', icon: 'house' };
+  const n = r ? S.tasks.filter(t => t.room === r.id).length : 0;
+  openSheet(
+    '<h2 class="t">' + (r ? 'Zimmer bearbeiten' : 'Neues Zimmer') + '</h2>' +
+    '<label class="fld"><span>Name</span><input id="rName" value="' + esc(RF.name) + '" placeholder="z. B. Arbeitszimmer" autocomplete="off"></label>' +
+    '<div class="lbl">Symbol</div><div class="icons" id="rIcon">' +
+    ROOM_PICK.map(k => '<button data-ri="' + k + '" class="' + (RF.icon === k ? 'on' : '') + '">' + svg(k) + '</button>').join('') + '</div>' +
+    '<div style="height:22px"></div><button class="btn pri" data-act="saveRoom">Speichern</button>' +
+    (r ? '<button class="btn danger" data-act="delRoom" data-n="' + n + '" style="margin-top:6px">Zimmer löschen</button>' : '')
+  );
+  sheet.dataset.form = 'room';
+  $('rName').addEventListener('input', e => { RF.name = e.target.value; });
+  if (!r) setTimeout(() => $('rName').focus(), 380);
+}
+
+function openSettings() {
+  openSheet(
+    '<h2 class="t">Einstellungen</h2>' +
+    '<div class="lbl" style="margin-top:0">Zimmer</div><div class="set-list">' +
+    S.rooms.map(r => '<button data-editroom="' + r.id + '"><span class="tile">' + svg(r.icon) + '</span><span class="grow">' + esc(r.name) + '</span>' +
+      '<span class="cnt">' + S.tasks.filter(t => t.room === r.id).length + '</span>' + svg('chevron-right').replace('class="i"', 'class="i chev"') + '</button>').join('') +
+    '<button data-act="newRoom"><span class="tile">' + svg('plus') + '</span><span class="grow acc">Zimmer hinzufügen</span></button></div>' +
+    '<div class="lbl">Sicherung</div><div class="set-list">' +
+    '<button data-act="export"><span class="tile">' + svg('download') + '</span><span class="grow">Daten sichern</span></button>' +
+    '<button data-act="import"><span class="tile">' + svg('upload') + '</span><span class="grow">Sicherung laden</span></button></div>' +
+    '<div class="lbl">Neu beginnen</div><div class="set-list">' +
+    '<button data-act="reset"><span class="tile">' + svg('rotate-ccw') + '</span><span class="grow">Mit Beispielen neu starten</span></button></div>' +
+    '<p class="foot">Alle Daten liegen nur auf diesem Gerät.</p>'
+  );
+  sheet.dataset.form = 'settings';
+}
+
+/* ---------- Klicks ---------- */
+document.addEventListener('click', e => {
+  const el = e.target.closest('button, .row, .rc, [data-act]');
+  if (!el) return;
+
+  // Hauptansicht
+  if (el.dataset.view) { view = el.dataset.view; try { localStorage.setItem(KEY + '.view', view); } catch (x) {} render(); return; }
+  if (el.dataset.room) { view = 'room'; curRoom = el.dataset.room; render(); window.scrollTo(0, 0); return; }
+  if (el.classList.contains('chk')) {
+    e.stopPropagation(); const r = el.closest('.row'); doComplete(r.dataset.id, today(), r); return;
+  }
+  if (el.classList.contains('row') && el.dataset.id) { openDetail(el.dataset.id); return; }
+
+  // Formular Aufgabe
+  if (el.dataset.r) { F.room = el.dataset.r; sheet.querySelectorAll('#fRoom .chip').forEach(b => b.classList.toggle('on', b.dataset.r === F.room));
+    if (!F.iconManual && !guessIcon(F.name)) { F.icon = room(F.room).icon; markIcon(); } return; }
+  if (el.dataset.step) { F.every = Math.max(1, Math.min(99, F.every + +el.dataset.step)); $('fEvery').textContent = F.every; return; }
+  if (el.dataset.u) { F.unit = el.dataset.u; sheet.querySelectorAll('#fUnit button').forEach(b => b.classList.toggle('on', b.dataset.u === F.unit)); return; }
+  if (el.dataset.m) { F.mode = el.dataset.m; sheet.querySelectorAll('#fMode button').forEach(b => b.classList.toggle('on', b.dataset.m === F.mode)); $('fHint').textContent = modeHint(); return; }
+  if (el.dataset.i) { F.icon = el.dataset.i; F.iconManual = true; markIcon(); return; }
+  if (el.dataset.ri) { RF.icon = el.dataset.ri; sheet.querySelectorAll('#rIcon button').forEach(b => b.classList.toggle('on', b.dataset.ri === RF.icon)); return; }
+  if (el.dataset.post) {
+    const t = task(sheet.dataset.id); const prev = JSON.parse(JSON.stringify(t));
+    const base = t.due < today() ? today() : t.due; t.due = addDays(base, +el.dataset.post); save();
+    closeSheet(); render(); toast('Verschoben auf ' + fmt(t.due), prev); return;
+  }
+  if (el.dataset.editroom) { openRoomEdit(el.dataset.editroom); return; }
+
+  const act = el.dataset.act;
+  if (!act) return;
+  if (act === 'settings') openSettings();
+  else if (act === 'back') { view = 'rooms'; render(); }
+  else if (act === 'later') { showLater = !showLater; render(); }
+  else if (act === 'new') openEdit(null, view === 'room' ? curRoom : null);
+  else if (act === 'editRoom') openRoomEdit(curRoom);
+  else if (act === 'doneToday') { const id = sheet.dataset.id; closeSheet(); doComplete(id, today()); }
+  else if (act === 'doneYesterday') { const id = sheet.dataset.id; closeSheet(); doComplete(id, addDays(today(), -1)); }
+  else if (act === 'edit') openEdit(sheet.dataset.id);
+  else if (act === 'saveTask') {
+    F.name = $('fName').value.trim();
+    if (!F.name) { $('fName').focus(); return; }
+    const data = { name: F.name, room: F.room, icon: F.icon, every: F.every, unit: F.unit, mode: F.mode, due: F.due };
+    if (F.id) Object.assign(task(F.id), data);
+    else S.tasks.push({ id: uid(), ...data, last: null, hist: [] });
+    save(); closeSheet(); render();
+  }
+  else if (act === 'delTask') {
+    if (!el.dataset.sure) { el.dataset.sure = '1'; el.textContent = 'Wirklich löschen?'; return; }
+    S.tasks = S.tasks.filter(t => t.id !== F.id); save(); closeSheet(); render();
+  }
+  else if (act === 'newRoom') openRoomEdit(null);
+  else if (act === 'saveRoom') {
+    RF.name = $('rName').value.trim(); if (!RF.name) { $('rName').focus(); return; }
+    if (RF.id) Object.assign(S.rooms.find(r => r.id === RF.id), { name: RF.name, icon: RF.icon });
+    else S.rooms.push({ id: uid(), name: RF.name, icon: RF.icon });
+    save(); closeSheet(); render();
+  }
+  else if (act === 'delRoom') {
+    const n = +el.dataset.n;
+    if (!el.dataset.sure) { el.dataset.sure = '1'; el.textContent = n ? 'Löschen, samt ' + (n === 1 ? 'einer Aufgabe' : n + ' Aufgaben') + '?' : 'Wirklich löschen?'; return; }
+    S.rooms = S.rooms.filter(r => r.id !== RF.id); S.tasks = S.tasks.filter(t => t.room !== RF.id);
+    save(); closeSheet(); if (view === 'room') view = 'rooms'; render();
+  }
+  else if (act === 'export') {
+    const blob = new Blob([JSON.stringify(S, null, 1)], { type: 'application/json' });
+    const a = document.createElement('a'); a.href = URL.createObjectURL(blob);
+    a.download = 'putzplan-' + today() + '.json'; document.body.appendChild(a); a.click();
+    setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 1000);
+  }
+  else if (act === 'import') $('importFile').click();
+  else if (act === 'reset') {
+    if (!el.dataset.sure) { el.dataset.sure = '1'; el.querySelector('.grow').textContent = 'Wirklich alles ersetzen?'; return; }
+    S = seed(); save(); closeSheet(); view = 'due'; render();
+  }
+});
+$('importFile').addEventListener('change', e => {
+  const f = e.target.files[0]; if (!f) return;
+  const rd = new FileReader();
+  rd.onload = () => {
+    try { const s = JSON.parse(rd.result); if (!s.rooms || !s.tasks) throw 0; S = s; save(); closeSheet(); render(); toast('Sicherung geladen.'); }
+    catch (x) { toast('Diese Datei ist keine Putzplan-Sicherung.'); }
+  };
+  rd.readAsText(f); e.target.value = '';
+});
+$('fab').innerHTML = svg('plus');
+$('fab').addEventListener('click', () => openEdit(null, view === 'room' ? curRoom : null));
+
+/* neuer Tag, App wieder geöffnet */
+let lastDay = today();
+document.addEventListener('visibilitychange', () => { if (!document.hidden && today() !== lastDay) { lastDay = today(); render(); } });
+setInterval(() => { if (today() !== lastDay) { lastDay = today(); render(); } }, 60000);
+
+render();
+</script>
+</body>
+</html>
